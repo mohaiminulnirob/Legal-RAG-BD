@@ -7,9 +7,9 @@ Last updated: 2026-09-09
 
 ## Current phase
 
-**Phase 3 — BM25 retrieval: complete**
+**Phase 4 — Dense retrieval: implementation complete; full index build in progress**
 
-Next: **Phase 4 — Dense retrieval**
+Next: **Verify the completed dense index, then proceed to Phase 5 — Hybrid RRF retrieval**
 
 ## Completed work
 
@@ -22,6 +22,9 @@ Next: **Phase 4 — Dense retrieval**
 | 2026-09-09 | Preprocessing | Generated `data/processed/legal_sections.json` from the raw dataset. | 35,633 records with unique `chunk_id` values validated. |
 | 2026-09-09 | BM25 retrieval | Added a persistent BM25 index builder and command-line search interface. | Unit tests passed; targeted Penal Code section 302 query returned section 302 first. |
 | 2026-09-09 | BM25 indexing | Built `data/processed/bm25_index.pkl` from the non-empty processed legal sections. | 35,630 sections indexed; saved index inspected. |
+| 2026-09-09 | Dense retrieval | Added Chroma-backed dense retrieval, a semantic-search CLI, and deterministic retrieval tests. | Dense retrieval test passes using a local test embedder. |
+| 2026-09-09 | Embedding model | Downloaded and verified the local `BAAI/bge-small-en-v1.5` model cache. | Model loads successfully and produces 384-dimensional normalized vectors. |
+| 2026-09-09 | Dense indexing | Started the full CPU batch embedding job for non-empty legal sections. | Persistent Chroma collection is being populated in `chroma_db/`. |
 
 ## Current project artifacts
 
@@ -32,8 +35,12 @@ Next: **Phase 4 — Dense retrieval**
 | `data/processed/legal_sections.json` | Section-level retrieval documents with preserved legal metadata and provenance. | Generated; 35,633 records. |
 | `src/ingestion/preprocess.py` | Converts the source dataset into retrieval units. | Implemented and validated. |
 | `src/retrieval/bm25.py` | Builds, persists, loads, and queries the lexical BM25 index. | Implemented and validated. |
+| `src/retrieval/dense.py` | Builds and queries semantic legal retrieval with Chroma. | Implemented and unit-tested; full index build in progress. |
+| `chroma_db/` | Persistent Chroma database for dense legal vectors. | Populating. |
+| `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
 | `data/processed/bm25_index.pkl` | Persistent BM25 index and citation metadata. | Generated; 35,630 non-empty sections indexed. |
 | `tests/test_bm25.py` | BM25 tokenizer, persistence, and ranking tests. | Passing. |
+| `tests/test_dense.py` | Dense-index persistence and semantic ranking tests. | Passing. |
 | `requirements.txt` | Pinned installed Python dependencies. | Present. |
 | `.env.example` | Placeholder for future provider configuration. | Present. |
 
@@ -57,20 +64,21 @@ The source act number cannot serve as a unique identifier because it may be reus
 - Raw dataset remains readable after preprocessing.
 - BM25 unit tests pass (tokenization, index persistence, and relevance ranking).
 - The targeted query `Section 302 punishment for murder` returns Penal Code section 302 as the top result.
+- Dense retrieval unit test passes using a deterministic local embedding model.
+- The production BGE model loads successfully and returns 384-dimensional vectors.
 
 ## Deferred work
 
-- Dense retrieval and vector storage dependencies (`sentence-transformers`, `chromadb`).
 - Hybrid retrieval, reranking, LLM baseline, and reasoning-aware modules.
 
 ## Next implementation task
 
-Implement dense retrieval using sentence-transformer embeddings and a persistent Chroma collection, including:
+After the in-progress dense build completes, verify its document count and semantic search. Then implement hybrid retrieval using Reciprocal Rank Fusion (RRF), including:
 
-1. Install and pin `sentence-transformers` and `chromadb`.
-2. Generate embeddings for the 35,630 non-empty legal sections.
-3. Persist the vectors and citation metadata in Chroma.
-4. Add dense-retrieval tests and a command-line query interface.
+1. Query BM25 and dense retrievers for the same case.
+2. Fuse ranked results using RRF.
+3. Preserve evidence citations and component scores.
+4. Add hybrid-ranking tests and a command-line query interface.
 
 ## Update rule
 

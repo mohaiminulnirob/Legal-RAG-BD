@@ -10,9 +10,11 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+data/model_cache/
 data/benchmark/*.local.json
 chroma_db/*
 !chroma_db/.gitkeep
+dense_build*.log
 
 # OS/editor files
 .DS_Store

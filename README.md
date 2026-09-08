@@ -43,3 +43,17 @@ Query it with a case or legal question:
 ```powershell
 python -m src.retrieval.bm25 search --query "What punishment applies for murder?" --top-k 5
 ```
+
+## Dense retrieval
+
+Build semantic embeddings and persist them in Chroma (the model downloads on first use):
+
+```powershell
+python -m src.retrieval.dense build --reset
+```
+
+Search using a natural-language scenario:
+
+```powershell
+python -m src.retrieval.dense search --query "A person intentionally killed another person" --top-k 5
+```
