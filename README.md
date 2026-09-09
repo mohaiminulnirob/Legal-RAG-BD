@@ -57,3 +57,13 @@ Search using a natural-language scenario:
 ```powershell
 python -m src.retrieval.dense search --query "A person intentionally killed another person" --top-k 5
 ```
+
+## Hybrid RRF retrieval
+
+Fuse the top 20 lexical and semantic candidates with Reciprocal Rank Fusion (RRF):
+
+```powershell
+python -m src.retrieval.hybrid search --query "A person intentionally killed another person" --top-k 10
+```
+
+The results retain the RRF score and the rank/score supplied by each retriever, making the evidence selection auditable during later evaluation.

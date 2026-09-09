@@ -7,9 +7,9 @@ Last updated: 2026-09-09
 
 ## Current phase
 
-**Phase 4 — Dense retrieval: implementation complete; full index build in progress**
+**Phase 5 — Hybrid BM25 + dense retrieval with RRF: complete**
 
-Next: **Verify the completed dense index, then proceed to Phase 5 — Hybrid RRF retrieval**
+Next: **Phase 6 — Retrieval evaluation**
 
 ## Completed work
 
@@ -25,6 +25,8 @@ Next: **Verify the completed dense index, then proceed to Phase 5 — Hybrid RRF
 | 2026-09-09 | Dense retrieval | Added Chroma-backed dense retrieval, a semantic-search CLI, and deterministic retrieval tests. | Dense retrieval test passes using a local test embedder. |
 | 2026-09-09 | Embedding model | Downloaded and verified the local `BAAI/bge-small-en-v1.5` model cache. | Model loads successfully and produces 384-dimensional normalized vectors. |
 | 2026-09-09 | Dense indexing | Started the full CPU batch embedding job for non-empty legal sections. | Persistent Chroma collection is being populated in `chroma_db/`. |
+| 2026-09-10 | Dense indexing | Completed the production Chroma build. | 35,630 non-empty legal sections persist in the collection. |
+| 2026-09-10 | Hybrid retrieval | Added BM25+dense Reciprocal Rank Fusion (RRF), an analysis-aware CLI, and unit tests. | Four hybrid tests and end-to-end retrieval test pass. |
 
 ## Current project artifacts
 
@@ -35,12 +37,14 @@ Next: **Verify the completed dense index, then proceed to Phase 5 — Hybrid RRF
 | `data/processed/legal_sections.json` | Section-level retrieval documents with preserved legal metadata and provenance. | Generated; 35,633 records. |
 | `src/ingestion/preprocess.py` | Converts the source dataset into retrieval units. | Implemented and validated. |
 | `src/retrieval/bm25.py` | Builds, persists, loads, and queries the lexical BM25 index. | Implemented and validated. |
-| `src/retrieval/dense.py` | Builds and queries semantic legal retrieval with Chroma. | Implemented and unit-tested; full index build in progress. |
-| `chroma_db/` | Persistent Chroma database for dense legal vectors. | Populating. |
+| `src/retrieval/dense.py` | Builds and queries semantic legal retrieval with Chroma. | Implemented, unit-tested, and fully indexed. |
+| `src/retrieval/hybrid.py` | Fuses BM25 and dense candidates with Reciprocal Rank Fusion. | Implemented and validated. |
+| `chroma_db/` | Persistent Chroma database for dense legal vectors. | Complete; 35,630 sections indexed. |
 | `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
 | `data/processed/bm25_index.pkl` | Persistent BM25 index and citation metadata. | Generated; 35,630 non-empty sections indexed. |
 | `tests/test_bm25.py` | BM25 tokenizer, persistence, and ranking tests. | Passing. |
 | `tests/test_dense.py` | Dense-index persistence and semantic ranking tests. | Passing. |
+| `tests/test_hybrid.py` | RRF fusion, duplicate merging, source preservation, and limit tests. | Passing. |
 | `requirements.txt` | Pinned installed Python dependencies. | Present. |
 | `.env.example` | Placeholder for future provider configuration. | Present. |
 
@@ -66,19 +70,22 @@ The source act number cannot serve as a unique identifier because it may be reus
 - The targeted query `Section 302 punishment for murder` returns Penal Code section 302 as the top result.
 - Dense retrieval unit test passes using a deterministic local embedding model.
 - The production BGE model loads successfully and returns 384-dimensional vectors.
+- Chroma contains all **35,630** non-empty legal sections.
+- Hybrid RRF tests pass: common documents are boosted, duplicates merge, source-only results remain, and limits are enforced.
+- The end-to-end hybrid CLI returns fused legal evidence with retriever ranks and scores.
 
 ## Deferred work
 
-- Hybrid retrieval, reranking, LLM baseline, and reasoning-aware modules.
+- Retrieval evaluation, reranking, LLM baseline, and reasoning-aware modules.
 
 ## Next implementation task
 
-After the in-progress dense build completes, verify its document count and semantic search. Then implement hybrid retrieval using Reciprocal Rank Fusion (RRF), including:
+Implement a retrieval benchmark and compare BM25, dense, and hybrid RRF performance, including:
 
-1. Query BM25 and dense retrievers for the same case.
-2. Fuse ranked results using RRF.
-3. Preserve evidence citations and component scores.
-4. Add hybrid-ranking tests and a command-line query interface.
+1. Create a versioned set of legal queries with relevant section IDs.
+2. Measure Recall@5, Recall@10, and MRR for all three retrievers.
+3. Export reproducible per-query and aggregate results.
+4. Use results to select evidence-retrieval settings before adding a reranker.
 
 ## Update rule
 
