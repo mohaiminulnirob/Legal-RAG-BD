@@ -67,3 +67,13 @@ python -m src.retrieval.hybrid search --query "A person intentionally killed ano
 ```
 
 The results retain the RRF score and the rank/score supplied by each retriever, making the evidence selection auditable during later evaluation.
+
+## Retrieval evaluation
+
+The manually curated benchmark in `data/benchmark/retrieval_queries.json` maps each query to statute section IDs verified from the source records. Run the comparison experiment with:
+
+```powershell
+python -m src.evaluation.retrieval_eval
+```
+
+It writes per-query ranks and aggregate Recall@5, Recall@10, and MRR for BM25, dense retrieval, and hybrid RRF to `data/benchmark/results/`.

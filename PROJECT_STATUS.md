@@ -3,13 +3,13 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-09
+Last updated: 2026-09-10
 
 ## Current phase
 
-**Phase 5 — Hybrid BM25 + dense retrieval with RRF: complete**
+**Phase 6 — Retrieval evaluation: complete**
 
-Next: **Phase 6 — Retrieval evaluation**
+Next: **Phase 7 — Cross-encoder reranker**
 
 ## Completed work
 
@@ -27,6 +27,8 @@ Next: **Phase 6 — Retrieval evaluation**
 | 2026-09-09 | Dense indexing | Started the full CPU batch embedding job for non-empty legal sections. | Persistent Chroma collection is being populated in `chroma_db/`. |
 | 2026-09-10 | Dense indexing | Completed the production Chroma build. | 35,630 non-empty legal sections persist in the collection. |
 | 2026-09-10 | Hybrid retrieval | Added BM25+dense Reciprocal Rank Fusion (RRF), an analysis-aware CLI, and unit tests. | Four hybrid tests and end-to-end retrieval test pass. |
+| 2026-09-10 | Retrieval benchmark | Added a manually curated benchmark of 36 statute-grounded queries across criminal, contract, evidence, and procedure law. | All query IDs and relevant chunk IDs validated against the processed dataset. |
+| 2026-09-10 | Retrieval evaluation | Added a reproducible evaluator for BM25, dense, and hybrid RRF. | Per-query and aggregate JSON results exported; all metric tests pass. |
 
 ## Current project artifacts
 
@@ -45,6 +47,10 @@ Next: **Phase 6 — Retrieval evaluation**
 | `tests/test_bm25.py` | BM25 tokenizer, persistence, and ranking tests. | Passing. |
 | `tests/test_dense.py` | Dense-index persistence and semantic ranking tests. | Passing. |
 | `tests/test_hybrid.py` | RRF fusion, duplicate merging, source preservation, and limit tests. | Passing. |
+| `data/benchmark/retrieval_queries.json` | Versioned, manually mapped legal retrieval benchmark. | 36 validated queries. |
+| `src/evaluation/retrieval_eval.py` | Runs retrieval experiments and exports Recall@5, Recall@10, and MRR. | Implemented and validated. |
+| `data/benchmark/results/` | Reproducible per-query and aggregate evaluation artifacts. | Generated. |
+| `tests/test_retrieval_eval.py` | Metric calculation and result-export tests. | Passing. |
 | `requirements.txt` | Pinned installed Python dependencies. | Present. |
 | `.env.example` | Placeholder for future provider configuration. | Present. |
 
@@ -73,19 +79,31 @@ The source act number cannot serve as a unique identifier because it may be reus
 - Chroma contains all **35,630** non-empty legal sections.
 - Hybrid RRF tests pass: common documents are boosted, duplicates merge, source-only results remain, and limits are enforced.
 - The end-to-end hybrid CLI returns fused legal evidence with retriever ranks and scores.
+- Evaluation benchmark contains 36 manually assigned, source-validated relevant section IDs.
+- All nine retrieval and evaluation tests pass.
+
+## Retrieval evaluation results
+
+| Retriever | Recall@5 | Recall@10 | MRR |
+| --- | ---: | ---: | ---: |
+| BM25 | 0.694444 | 0.833333 | 0.541545 |
+| Dense | 0.750000 | 0.888889 | 0.592626 |
+| Hybrid RRF | **0.833333** | **0.916667** | **0.672718** |
+
+These results are from the initial 36-query benchmark. They support using hybrid RRF as the evidence-retrieval baseline, but the benchmark should be expanded and independently reviewed before treating the figures as final thesis results.
 
 ## Deferred work
 
-- Retrieval evaluation, reranking, LLM baseline, and reasoning-aware modules.
+- Reranking, LLM baseline, and reasoning-aware modules.
 
 ## Next implementation task
 
-Implement a retrieval benchmark and compare BM25, dense, and hybrid RRF performance, including:
+Implement a cross-encoder reranker after hybrid retrieval, including:
 
-1. Create a versioned set of legal queries with relevant section IDs.
-2. Measure Recall@5, Recall@10, and MRR for all three retrievers.
-3. Export reproducible per-query and aggregate results.
-4. Use results to select evidence-retrieval settings before adding a reranker.
+1. Rerank the hybrid top-20 candidates with a cross-encoder.
+2. Return the top 5–10 citation-preserving evidence sections.
+3. Add reranker unit tests and a command-line interface.
+4. Re-run this benchmark to measure the reranker's effect.
 
 ## Update rule
 
