@@ -1,0 +1,2954 @@
+[
+  {
+    "query_id": "r001",
+    "category": "exact_section",
+    "query": "Section 302 punishment for murder",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0344"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0344",
+          "act_act-print-11_section_0351",
+          "act_act-print-75_section_0275",
+          "act_act-print-11_section_0119",
+          "act_act-print-11_section_0118",
+          "act_act-print-248_section_0062",
+          "act_act-print-11_section_0245",
+          "act_act-print-11_section_0125",
+          "act_act-print-11_section_0121",
+          "act_act-print-11_section_0210"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0344",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0234",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0543",
+          "act_act-print-11_section_0352",
+          "act_act-print-248_section_0157",
+          "act_act-print-11_section_0125",
+          "act_act-print-75_section_0480"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0344",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0125",
+          "act_act-print-75_section_0275",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0234",
+          "act_act-print-11_section_0119",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0118",
+          "act_act-print-11_section_0341"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0344",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0210",
+          "act_act-print-75_section_0275",
+          "act_act-print-248_section_0062",
+          "act_act-print-11_section_0125",
+          "act_act-print-75_section_0402",
+          "act_act-print-11_section_0119"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r002",
+    "category": "paraphrase",
+    "query": "What law defines culpable homicide?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0340"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0352",
+          "act_act-print-310_section_0079",
+          "act_act-print-256_section_0073",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0347"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0347"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0347",
+          "act_act-print-75_section_0035"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0341",
+          "act_act-print-310_section_0079",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0347",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0361",
+          "act_act-print-256_section_0073",
+          "act_act-print-11_section_0342"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r003",
+    "category": "paraphrase",
+    "query": "When does culpable homicide become murder?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0341"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0361",
+          "act_act-print-310_section_0079",
+          "act_act-print-256_section_0073",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0362",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0343"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0448"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 8,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.125,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0351"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0347",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0340"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r004",
+    "category": "scenario",
+    "query": "Someone tried to kill another person but the victim survived. What offence may apply?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0351"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0100",
+          "act_act-print-467_section_0043",
+          "act_act-print-11_section_0340",
+          "act_act-print-310_section_0106",
+          "act_act-print-248_section_0096",
+          "act_act-print-75_section_0411",
+          "act_act-print-256_section_0123",
+          "act_act-print-11_section_0106",
+          "act_act-print-75_section_0243",
+          "act_act-print-310_section_0123"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.25,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0038",
+          "act_act-print-11_section_0040",
+          "act_act-print-11_section_0261",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0109"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 7,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.14285714,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0100",
+          "act_act-print-24_section_0038",
+          "act_act-print-11_section_0040",
+          "act_act-print-467_section_0043",
+          "act_act-print-11_section_0261",
+          "act_act-print-11_section_0351",
+          "act_act-print-310_section_0106",
+          "act_act-print-248_section_0096",
+          "act_act-print-11_section_0341"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 9,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.11111111,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0411",
+          "act_act-print-24_section_0038",
+          "act_act-print-11_section_0102",
+          "act_act-print-467_section_0043",
+          "act_act-print-248_section_0096",
+          "act_act-print-11_section_0261",
+          "act_act-print-256_section_0123",
+          "act_act-print-11_section_0100",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0342"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r005",
+    "category": "exact_section",
+    "query": "Section 304 punishment for culpable homicide not amounting to murder",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0348"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-310_section_0079",
+          "act_act-print-256_section_0073",
+          "act_act-print-248_section_0062",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0347",
+          "act_act-print-11_section_0362"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-75_section_0402",
+          "act_act-print-75_section_0250",
+          "act_act-print-11_section_0340"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0342",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0341",
+          "act_act-print-11_section_0343",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0340",
+          "act_act-print-75_section_0411"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0348",
+          "act_act-print-11_section_0346",
+          "act_act-print-11_section_0352",
+          "act_act-print-11_section_0347",
+          "act_act-print-11_section_0361",
+          "act_act-print-310_section_0079",
+          "act_act-print-256_section_0073",
+          "act_act-print-11_section_0041",
+          "act_act-print-11_section_0362",
+          "act_act-print-11_section_0342"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r006",
+    "category": "scenario",
+    "query": "Several people committed a criminal act together with a shared intention. Which provision applies?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0037"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0038",
+          "act_act-print-75_section_0292",
+          "act_act-print-75_section_0232",
+          "act_act-print-75_section_0568",
+          "act_act-print-11_section_0118",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0351",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0120",
+          "act_act-print-11_section_0245"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0037",
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0040",
+          "act_act-print-24_section_0038",
+          "act_act-print-225_section_0004",
+          "act_act-print-11_section_0136",
+          "act_act-print-11_section_0443",
+          "act_act-print-225_section_0005",
+          "act_act-print-157_section_0077",
+          "act_act-print-24_section_0014"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0037",
+          "act_act-print-11_section_0118",
+          "act_act-print-47_section_0056",
+          "act_act-print-75_section_0058",
+          "act_act-print-75_section_0292",
+          "act_act-print-11_section_0040",
+          "act_act-print-75_section_0232",
+          "act_act-print-24_section_0038",
+          "act_act-print-75_section_0568"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0037",
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0040",
+          "act_act-print-11_section_0120",
+          "act_act-print-75_section_0058",
+          "act_act-print-225_section_0004",
+          "act_act-print-11_section_0245",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0118",
+          "act_act-print-75_section_0232"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r007",
+    "category": "scenario",
+    "query": "Several separate acts together caused an offence. Who is liable?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0040"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0040",
+          "act_act-print-11_section_0077",
+          "act_act-print-75_section_0232",
+          "act_act-print-11_section_0118",
+          "act_act-print-46_section_0143",
+          "act_act-print-75_section_0291",
+          "act_act-print-75_section_0411",
+          "act_act-print-355_section_0035",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0340"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-157_section_0028",
+          "act_act-print-11_section_0040",
+          "act_act-print-11_section_0037",
+          "act_act-print-11_section_0121",
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0039",
+          "act_act-print-157_section_0029",
+          "act_act-print-11_section_0123",
+          "act_act-print-157_section_0049",
+          "act_act-print-11_section_0122"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0040",
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0077",
+          "act_act-print-157_section_0049",
+          "act_act-print-157_section_0028",
+          "act_act-print-11_section_0037",
+          "act_act-print-75_section_0232",
+          "act_act-print-11_section_0118",
+          "act_act-print-11_section_0121",
+          "act_act-print-46_section_0143"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 6,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.16666667,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0291",
+          "act_act-print-11_section_0077",
+          "act_act-print-11_section_0037",
+          "act_act-print-11_section_0122",
+          "act_act-print-11_section_0038",
+          "act_act-print-11_section_0040",
+          "act_act-print-75_section_0411",
+          "act_act-print-11_section_0123",
+          "act_act-print-11_section_0361",
+          "act_act-print-11_section_0039"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r008",
+    "category": "exact_terminology",
+    "query": "Definition of theft under Penal Code section 378",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0428"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 9,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.11111111,
+        "retrieved_chunk_ids": [
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0105",
+          "act_act-print-75_section_0275",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0007",
+          "act_act-print-11_section_0441",
+          "act_act-print-55_section_0037",
+          "act_act-print-11_section_0491",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0440"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0429",
+          "act_act-print-11_section_0432",
+          "act_act-print-75_section_0230",
+          "act_act-print-11_section_0403",
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0463",
+          "act_act-print-11_section_0466",
+          "act_act-print-11_section_0462",
+          "act_act-print-11_section_0430"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 6,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.16666667,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0441",
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0429",
+          "act_act-print-11_section_0403",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0430",
+          "act_act-print-11_section_0431",
+          "act_act-print-11_section_0453"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0429",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0428",
+          "act_act-print-75_section_0230",
+          "act_act-print-11_section_0105",
+          "act_act-print-11_section_0431",
+          "act_act-print-11_section_0462",
+          "act_act-print-11_section_0466"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r009",
+    "category": "exact_section",
+    "query": "Section 379 punishment for theft",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0429"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0429",
+          "act_act-print-91_section_0003",
+          "act_act-print-75_section_0275",
+          "act_act-print-75_section_0288",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0118",
+          "act_act-print-808_section_0002",
+          "act_act-print-11_section_0583",
+          "act_act-print-11_section_0121",
+          "act_act-print-75_section_0310"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0429",
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0465",
+          "act_act-print-11_section_0430",
+          "act_act-print-11_section_0463",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0453",
+          "act_act-print-11_section_0466",
+          "act_act-print-11_section_0431"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0429",
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0428",
+          "act_act-print-75_section_0275",
+          "act_act-print-11_section_0465",
+          "act_act-print-75_section_0288",
+          "act_act-print-11_section_0430",
+          "act_act-print-11_section_0118"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0429",
+          "act_act-print-91_section_0003",
+          "act_act-print-11_section_0432",
+          "act_act-print-75_section_0288",
+          "act_act-print-11_section_0465",
+          "act_act-print-11_section_0583",
+          "act_act-print-75_section_0310",
+          "act_act-print-11_section_0403",
+          "act_act-print-11_section_0430",
+          "act_act-print-11_section_0431"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r010",
+    "category": "paraphrase",
+    "query": "What is robbery according to the Penal Code?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0440"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 8,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.125,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0132",
+          "act_act-print-11_section_0443",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0105",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0450",
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0446"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0445",
+          "act_act-print-11_section_0442",
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0450",
+          "act_act-print-11_section_0105",
+          "act_act-print-11_section_0429"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0105",
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0443",
+          "act_act-print-11_section_0450",
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0132",
+          "act_act-print-11_section_0442",
+          "act_act-print-11_section_0445"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0445",
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0449",
+          "act_act-print-11_section_0403",
+          "act_act-print-11_section_0443",
+          "act_act-print-11_section_0429"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r011",
+    "category": "exact_section",
+    "query": "Section 392 punishment for robbery",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0444"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0132",
+          "act_act-print-11_section_0245",
+          "act_act-print-138_section_0395",
+          "act_act-print-11_section_0446",
+          "act_act-print-75_section_0411",
+          "act_act-print-248_section_0129",
+          "act_act-print-69_section_0047"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0445",
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0450",
+          "act_act-print-11_section_0449",
+          "act_act-print-11_section_0441",
+          "act_act-print-11_section_0132",
+          "act_act-print-11_section_0432"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0132",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0445",
+          "act_act-print-11_section_0440",
+          "act_act-print-11_section_0245",
+          "act_act-print-11_section_0450",
+          "act_act-print-138_section_0395"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0444",
+          "act_act-print-11_section_0446",
+          "act_act-print-11_section_0445",
+          "act_act-print-11_section_0449",
+          "act_act-print-11_section_0432",
+          "act_act-print-11_section_0450",
+          "act_act-print-11_section_0251",
+          "act_act-print-11_section_0126",
+          "act_act-print-11_section_0453",
+          "act_act-print-75_section_0411"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r012",
+    "category": "scenario",
+    "query": "A person entrusted with property dishonestly misused it. What offence definition applies?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0457"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0455",
+          "act_act-print-310_section_0063",
+          "act_act-print-256_section_0053",
+          "act_act-print-75_section_0294",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0514",
+          "act_act-print-138_section_0076",
+          "act_act-print-11_section_0118"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 10,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.1,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0455",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0027",
+          "act_act-print-11_section_0476",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0475",
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0531",
+          "act_act-print-11_section_0463",
+          "act_act-print-11_section_0457"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0455",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0476",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0514",
+          "act_act-print-11_section_0027",
+          "act_act-print-310_section_0063"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0456",
+          "act_act-print-256_section_0053",
+          "act_act-print-310_section_0063",
+          "act_act-print-11_section_0455",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0476",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0514",
+          "act_act-print-11_section_0475",
+          "act_act-print-11_section_0463"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r013",
+    "category": "exact_section",
+    "query": "Section 406 punishment for criminal breach of trust",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0458"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0294",
+          "act_act-print-11_section_0458",
+          "act_act-print-75_section_0293",
+          "act_act-print-11_section_0457",
+          "act_act-print-75_section_0292",
+          "act_act-print-75_section_0414",
+          "act_act-print-47_section_0083",
+          "act_act-print-47_section_0045",
+          "act_act-print-47_section_0032",
+          "act_act-print-11_section_0462"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0458",
+          "act_act-print-11_section_0461",
+          "act_act-print-11_section_0460",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0459",
+          "act_act-print-1241_section_0037",
+          "act_act-print-355_section_0036",
+          "act_act-print-11_section_0514",
+          "act_act-print-47_section_0096",
+          "act_act-print-11_section_0472"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0458",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0459",
+          "act_act-print-11_section_0460",
+          "act_act-print-47_section_0032",
+          "act_act-print-11_section_0462",
+          "act_act-print-248_section_0043",
+          "act_act-print-30_section_0010",
+          "act_act-print-75_section_0294",
+          "act_act-print-11_section_0461"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0458",
+          "act_act-print-11_section_0459",
+          "act_act-print-11_section_0460",
+          "act_act-print-11_section_0461",
+          "act_act-print-75_section_0294",
+          "act_act-print-75_section_0293",
+          "act_act-print-248_section_0043",
+          "act_act-print-75_section_0414",
+          "act_act-print-11_section_0457",
+          "act_act-print-47_section_0045"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r014",
+    "category": "scenario",
+    "query": "A person deceived another and dishonestly induced delivery of property. What offence may apply?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0467"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0455",
+          "act_act-print-310_section_0063",
+          "act_act-print-256_section_0053",
+          "act_act-print-48_section_0104",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0456",
+          "act_act-print-75_section_0344",
+          "act_act-print-47_section_0083"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0455",
+          "act_act-print-11_section_0433",
+          "act_act-print-11_section_0476",
+          "act_act-print-11_section_0027",
+          "act_act-print-11_section_0475",
+          "act_act-print-11_section_0457"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0455",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0473",
+          "act_act-print-310_section_0063",
+          "act_act-print-256_section_0053",
+          "act_act-print-11_section_0433"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0456",
+          "act_act-print-11_section_0476",
+          "act_act-print-11_section_0433",
+          "act_act-print-11_section_0475",
+          "act_act-print-11_section_0027",
+          "act_act-print-11_section_0464",
+          "act_act-print-310_section_0063"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r015",
+    "category": "exact_section",
+    "query": "Section 420 cheating and dishonestly inducing delivery of property",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0472"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0467",
+          "act_act-print-75_section_0344",
+          "act_act-print-75_section_0292",
+          "act_act-print-11_section_0457",
+          "act_act-print-75_section_0562",
+          "act_act-print-11_section_0456",
+          "act_act-print-326_section_0065",
+          "act_act-print-229_section_0004",
+          "act_act-print-11_section_0428"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0467",
+          "act_act-print-1241_section_0037",
+          "act_act-print-11_section_0472",
+          "act_act-print-1163_section_0012",
+          "act_act-print-675_section_0003",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0455",
+          "act_act-print-1163_section_0055",
+          "act_act-print-891_section_0063"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0428",
+          "act_act-print-11_section_0455",
+          "act_act-print-1241_section_0037",
+          "act_act-print-75_section_0344",
+          "act_act-print-1163_section_0012",
+          "act_act-print-75_section_0292",
+          "act_act-print-675_section_0003"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0472",
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0473",
+          "act_act-print-11_section_0455",
+          "act_act-print-326_section_0065",
+          "act_act-print-11_section_0456",
+          "act_act-print-248_section_0166",
+          "act_act-print-229_section_0004",
+          "act_act-print-11_section_0457",
+          "act_act-print-11_section_0428"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r016",
+    "category": "exact_terminology",
+    "query": "Definition of forgery under section 463",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0517"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0517",
+          "act_act-print-11_section_0518",
+          "act_act-print-46_section_0039",
+          "act_act-print-11_section_0527",
+          "act_act-print-643_section_0002",
+          "act_act-print-55_section_0037",
+          "act_act-print-11_section_0526",
+          "act_act-print-11_section_0007",
+          "act_act-print-642_section_0466",
+          "act_act-print-310_section_0180"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 10,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.1,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0518",
+          "act_act-print-11_section_0525",
+          "act_act-print-11_section_0524",
+          "act_act-print-11_section_0519",
+          "act_act-print-11_section_0467",
+          "act_act-print-11_section_0523",
+          "act_act-print-11_section_0528",
+          "act_act-print-11_section_0522",
+          "act_act-print-11_section_0529",
+          "act_act-print-11_section_0517"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0518",
+          "act_act-print-11_section_0517",
+          "act_act-print-11_section_0527",
+          "act_act-print-11_section_0524",
+          "act_act-print-11_section_0519",
+          "act_act-print-11_section_0526",
+          "act_act-print-353_section_0020",
+          "act_act-print-11_section_0525",
+          "act_act-print-46_section_0039",
+          "act_act-print-11_section_0467"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0527",
+          "act_act-print-11_section_0517",
+          "act_act-print-11_section_0526",
+          "act_act-print-11_section_0519",
+          "act_act-print-11_section_0528",
+          "act_act-print-11_section_0523",
+          "act_act-print-11_section_0529",
+          "act_act-print-11_section_0530",
+          "act_act-print-11_section_0522",
+          "act_act-print-11_section_0524"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r017",
+    "category": "scenario",
+    "query": "A person used a forged document as if it were genuine. Which provision applies?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0525"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0525",
+          "act_act-print-24_section_0028",
+          "act_act-print-11_section_0528",
+          "act_act-print-11_section_0547",
+          "act_act-print-24_section_0119",
+          "act_act-print-11_section_0546",
+          "act_act-print-11_section_0530",
+          "act_act-print-252_section_0003",
+          "act_act-print-11_section_0523",
+          "act_act-print-11_section_0529"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0525",
+          "act_act-print-11_section_0518",
+          "act_act-print-11_section_0524",
+          "act_act-print-11_section_0528",
+          "act_act-print-11_section_0467",
+          "act_act-print-252_section_0003",
+          "act_act-print-11_section_0530",
+          "act_act-print-11_section_0529",
+          "act_act-print-11_section_0031",
+          "act_act-print-11_section_0225"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0525",
+          "act_act-print-11_section_0528",
+          "act_act-print-252_section_0003",
+          "act_act-print-11_section_0530",
+          "act_act-print-11_section_0529",
+          "act_act-print-11_section_0547",
+          "act_act-print-11_section_0546",
+          "act_act-print-11_section_0278",
+          "act_act-print-11_section_0522",
+          "act_act-print-11_section_0518"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0525",
+          "act_act-print-11_section_0528",
+          "act_act-print-11_section_0547",
+          "act_act-print-11_section_0522",
+          "act_act-print-11_section_0546",
+          "act_act-print-11_section_0523",
+          "act_act-print-11_section_0530",
+          "act_act-print-11_section_0529",
+          "act_act-print-11_section_0524",
+          "act_act-print-24_section_0028"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r018",
+    "category": "exact_terminology",
+    "query": "Definition of defamation under Penal Code",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0560"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 8,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.125,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0007",
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0561",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0562",
+          "act_act-print-11_section_0105",
+          "act_act-print-11_section_0563",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0564",
+          "act_act-print-55_section_0037"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0561",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0242",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0566",
+          "act_act-print-11_section_0229",
+          "act_act-print-11_section_0563",
+          "act_act-print-11_section_0238",
+          "act_act-print-11_section_0562"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.25,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0561",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0562",
+          "act_act-print-11_section_0563",
+          "act_act-print-11_section_0566",
+          "act_act-print-11_section_0564",
+          "act_act-print-11_section_0567",
+          "act_act-print-11_section_0007"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0141",
+          "act_act-print-11_section_0561",
+          "act_act-print-11_section_0242",
+          "act_act-print-11_section_0229",
+          "act_act-print-11_section_0214",
+          "act_act-print-11_section_0568",
+          "act_act-print-11_section_0564",
+          "act_act-print-11_section_0562",
+          "act_act-print-11_section_0238",
+          "act_act-print-11_section_0559"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r019",
+    "category": "exact_section",
+    "query": "Section 500 punishment for defamation",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0570"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0559",
+          "act_act-print-138_section_0174",
+          "act_act-print-11_section_0562",
+          "act_act-print-248_section_0129",
+          "act_act-print-11_section_0560",
+          "act_act-print-69_section_0047",
+          "act_act-print-256_section_0158",
+          "act_act-print-248_section_0148",
+          "act_act-print-69_section_0050",
+          "act_act-print-46_section_0006"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-1241_section_0037",
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0265",
+          "act_act-print-11_section_0332",
+          "act_act-print-1163_section_0060",
+          "act_act-print-692_section_0079",
+          "act_act-print-11_section_0574",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0561",
+          "act_act-print-11_section_0581"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0565",
+          "act_act-print-1241_section_0037",
+          "act_act-print-138_section_0174",
+          "act_act-print-11_section_0265",
+          "act_act-print-11_section_0562",
+          "act_act-print-11_section_0332",
+          "act_act-print-248_section_0129",
+          "act_act-print-1163_section_0060"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0561",
+          "act_act-print-1241_section_0037",
+          "act_act-print-11_section_0332",
+          "act_act-print-1163_section_0060",
+          "act_act-print-11_section_0574",
+          "act_act-print-11_section_0242",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0559",
+          "act_act-print-11_section_0265"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r020",
+    "category": "scenario",
+    "query": "A person threatened injury to another person's reputation to cause alarm. What offence is this?",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0573"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0340",
+          "act_act-print-310_section_0089",
+          "act_act-print-11_section_0397",
+          "act_act-print-256_section_0037",
+          "act_act-print-248_section_0033",
+          "act_act-print-511_section_0041",
+          "act_act-print-578_section_0041",
+          "act_act-print-692_section_0041"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0109",
+          "act_act-print-11_section_0223",
+          "act_act-print-11_section_0398",
+          "act_act-print-11_section_0172",
+          "act_act-print-11_section_0433",
+          "act_act-print-11_section_0397",
+          "act_act-print-11_section_0579",
+          "act_act-print-11_section_0477"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0397",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0565",
+          "act_act-print-11_section_0109",
+          "act_act-print-11_section_0340",
+          "act_act-print-11_section_0223",
+          "act_act-print-310_section_0089",
+          "act_act-print-11_section_0398",
+          "act_act-print-11_section_0172"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0573",
+          "act_act-print-511_section_0041",
+          "act_act-print-692_section_0041",
+          "act_act-print-578_section_0041",
+          "act_act-print-11_section_0223",
+          "act_act-print-11_section_0579",
+          "act_act-print-256_section_0037",
+          "act_act-print-11_section_0397",
+          "act_act-print-11_section_0560",
+          "act_act-print-11_section_0565"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r021",
+    "category": "exact_section",
+    "query": "Section 506 punishment for criminal intimidation",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0577"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0577",
+          "act_act-print-11_section_0579",
+          "act_act-print-75_section_0275",
+          "act_act-print-26_section_0017",
+          "act_act-print-75_section_0505",
+          "act_act-print-11_section_0573",
+          "act_act-print-75_section_0310",
+          "act_act-print-75_section_0527",
+          "act_act-print-75_section_0506",
+          "act_act-print-75_section_0480"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0577",
+          "act_act-print-11_section_0573",
+          "act_act-print-75_section_0505",
+          "act_act-print-11_section_0579",
+          "act_act-print-75_section_0480",
+          "act_act-print-75_section_0465",
+          "act_act-print-11_section_0172",
+          "act_act-print-75_section_0506",
+          "act_act-print-75_section_0067",
+          "act_act-print-261_section_0005"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0577",
+          "act_act-print-11_section_0579",
+          "act_act-print-11_section_0573",
+          "act_act-print-75_section_0505",
+          "act_act-print-75_section_0480",
+          "act_act-print-75_section_0506",
+          "act_act-print-75_section_0275",
+          "act_act-print-26_section_0017",
+          "act_act-print-75_section_0465",
+          "act_act-print-11_section_0172"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-11_section_0577",
+          "act_act-print-11_section_0579",
+          "act_act-print-11_section_0573",
+          "act_act-print-75_section_0138",
+          "act_act-print-26_section_0017",
+          "act_act-print-75_section_0310",
+          "act_act-print-75_section_0527",
+          "act_act-print-75_section_0480",
+          "act_act-print-75_section_0275",
+          "act_act-print-75_section_0505"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r022",
+    "category": "exact_terminology",
+    "query": "Requirements for a valid contract under section 10",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0012"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-642_section_0252",
+          "act_act-print-181_section_0026",
+          "act_act-print-26_section_0073",
+          "act_act-print-26_section_0068",
+          "act_act-print-232_section_0023",
+          "act_act-print-36_section_0022",
+          "act_act-print-282_section_0011",
+          "act_act-print-26_section_0069",
+          "act_act-print-36_section_0023",
+          "act_act-print-642_section_0312"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-82_section_0012",
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0145",
+          "act_act-print-26_section_0199",
+          "act_act-print-26_section_0109",
+          "act_act-print-46_section_0089",
+          "act_act-print-26_section_0107",
+          "act_act-print-26_section_0182",
+          "act_act-print-26_section_0108",
+          "act_act-print-26_section_0144"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0145",
+          "act_act-print-26_section_0109",
+          "act_act-print-232_section_0023",
+          "act_act-print-26_section_0028",
+          "act_act-print-26_section_0166",
+          "act_act-print-642_section_0252",
+          "act_act-print-82_section_0012",
+          "act_act-print-181_section_0026",
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0073"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-232_section_0023",
+          "act_act-print-82_section_0012",
+          "act_act-print-181_section_0026",
+          "act_act-print-36_section_0023",
+          "act_act-print-26_section_0028",
+          "act_act-print-282_section_0011",
+          "act_act-print-36_section_0022",
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0069",
+          "act_act-print-26_section_0073"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r023",
+    "category": "scenario",
+    "query": "Who is legally competent to enter into a contract?",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0013"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 7,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.14285714,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0079",
+          "act_act-print-26_section_0019",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0112",
+          "act_act-print-26_section_0017",
+          "act_act-print-47_section_0071",
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0028",
+          "act_act-print-82_section_0032",
+          "act_act-print-12_section_0031"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0158",
+          "act_act-print-26_section_0194",
+          "act_act-print-26_section_0156",
+          "act_act-print-26_section_0150",
+          "act_act-print-26_section_0205",
+          "act_act-print-46_section_0011",
+          "act_act-print-26_section_0198",
+          "act_act-print-26_section_0034",
+          "act_act-print-26_section_0079"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0079",
+          "act_act-print-26_section_0200",
+          "act_act-print-26_section_0019",
+          "act_act-print-26_section_0158",
+          "act_act-print-26_section_0194",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0112",
+          "act_act-print-26_section_0156",
+          "act_act-print-26_section_0017"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0013",
+          "act_act-print-26_section_0012",
+          "act_act-print-26_section_0079",
+          "act_act-print-26_section_0205",
+          "act_act-print-47_section_0071",
+          "act_act-print-26_section_0200",
+          "act_act-print-26_section_0198",
+          "act_act-print-26_section_0194",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0156"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r024",
+    "category": "exact_terminology",
+    "query": "What is free consent in a contract?",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0016"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0012",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0016",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0028",
+          "act_act-print-26_section_0053",
+          "act_act-print-150_section_0017",
+          "act_act-print-26_section_0196",
+          "act_act-print-26_section_0055",
+          "act_act-print-150_section_0009"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0016",
+          "act_act-print-26_section_0015",
+          "act_act-print-26_section_0028",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0012",
+          "act_act-print-26_section_0022",
+          "act_act-print-26_section_0081",
+          "act_act-print-26_section_0189",
+          "act_act-print-26_section_0080",
+          "act_act-print-26_section_0010"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0016",
+          "act_act-print-26_section_0012",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0028",
+          "act_act-print-26_section_0022",
+          "act_act-print-26_section_0015",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0053",
+          "act_act-print-150_section_0017",
+          "act_act-print-26_section_0081"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0012",
+          "act_act-print-26_section_0016",
+          "act_act-print-26_section_0015",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0022",
+          "act_act-print-36_section_0029",
+          "act_act-print-26_section_0028",
+          "act_act-print-150_section_0017",
+          "act_act-print-26_section_0026",
+          "act_act-print-26_section_0010"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r025",
+    "category": "scenario",
+    "query": "An agreement was obtained by threats prohibited by criminal law. What is coercion?",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0017"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0017",
+          "act_act-print-11_section_0161",
+          "act_act-print-391_section_0003",
+          "act_act-print-45_section_0011",
+          "act_act-print-24_section_0122",
+          "act_act-print-203_section_0015",
+          "act_act-print-11_section_0091",
+          "act_act-print-24_section_0061",
+          "act_act-print-99_section_0037",
+          "act_act-print-11_section_0085"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0017",
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0579",
+          "act_act-print-11_section_0493",
+          "act_act-print-11_section_0435",
+          "act_act-print-11_section_0551",
+          "act_act-print-26_section_0016",
+          "act_act-print-11_section_0433",
+          "act_act-print-11_section_0172",
+          "act_act-print-11_section_0387"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0017",
+          "act_act-print-11_section_0161",
+          "act_act-print-11_section_0573",
+          "act_act-print-11_section_0579",
+          "act_act-print-391_section_0003",
+          "act_act-print-11_section_0493",
+          "act_act-print-45_section_0011",
+          "act_act-print-11_section_0435",
+          "act_act-print-24_section_0122",
+          "act_act-print-11_section_0551"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0017",
+          "act_act-print-11_section_0579",
+          "act_act-print-11_section_0573",
+          "act_act-print-26_section_0016",
+          "act_act-print-11_section_0172",
+          "act_act-print-11_section_0161",
+          "act_act-print-391_section_0003",
+          "act_act-print-45_section_0011",
+          "act_act-print-24_section_0122",
+          "act_act-print-203_section_0015"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r026",
+    "category": "scenario",
+    "query": "A contract was induced by unfair dominance of one party over another. What doctrine applies?",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0018"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0018",
+          "act_act-print-36_section_0033",
+          "act_act-print-26_section_0075",
+          "act_act-print-24_section_0122",
+          "act_act-print-26_section_0191",
+          "act_act-print-26_section_0020",
+          "act_act-print-49_section_0061",
+          "act_act-print-24_section_0121",
+          "act_act-print-75_section_0232",
+          "act_act-print-26_section_0021"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0018",
+          "act_act-print-26_section_0026",
+          "act_act-print-26_section_0204",
+          "act_act-print-26_section_0072",
+          "act_act-print-26_section_0080",
+          "act_act-print-26_section_0089",
+          "act_act-print-26_section_0022",
+          "act_act-print-26_section_0203",
+          "act_act-print-157_section_0014",
+          "act_act-print-26_section_0021"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0018",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0022",
+          "act_act-print-26_section_0026",
+          "act_act-print-36_section_0033",
+          "act_act-print-26_section_0075",
+          "act_act-print-26_section_0204",
+          "act_act-print-24_section_0122",
+          "act_act-print-26_section_0072",
+          "act_act-print-26_section_0080"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0018",
+          "act_act-print-36_section_0033",
+          "act_act-print-26_section_0204",
+          "act_act-print-26_section_0089",
+          "act_act-print-26_section_0022",
+          "act_act-print-26_section_0203",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0075",
+          "act_act-print-26_section_0072",
+          "act_act-print-26_section_0026"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r027",
+    "category": "exact_terminology",
+    "query": "Definition of fraud in a contract",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0019"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0019",
+          "act_act-print-26_section_0016",
+          "act_act-print-26_section_0160",
+          "act_act-print-36_section_0030",
+          "act_act-print-157_section_0056",
+          "act_act-print-47_section_0104",
+          "act_act-print-11_section_0517",
+          "act_act-print-36_section_0036",
+          "act_act-print-36_section_0033"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0019",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0207",
+          "act_act-print-26_section_0020",
+          "act_act-print-11_section_0518",
+          "act_act-print-26_section_0204",
+          "act_act-print-26_section_0089",
+          "act_act-print-26_section_0107",
+          "act_act-print-11_section_0467",
+          "act_act-print-26_section_0035"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0019",
+          "act_act-print-26_section_0021",
+          "act_act-print-26_section_0016",
+          "act_act-print-26_section_0207",
+          "act_act-print-26_section_0020",
+          "act_act-print-26_section_0160",
+          "act_act-print-11_section_0518",
+          "act_act-print-36_section_0030",
+          "act_act-print-157_section_0056",
+          "act_act-print-26_section_0204"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0019",
+          "act_act-print-26_section_0207",
+          "act_act-print-157_section_0056",
+          "act_act-print-36_section_0036",
+          "act_act-print-11_section_0517",
+          "act_act-print-47_section_0104",
+          "act_act-print-26_section_0021",
+          "act_act-print-36_section_0033",
+          "act_act-print-36_section_0030",
+          "act_act-print-26_section_0020"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r028",
+    "category": "scenario",
+    "query": "A party suffered loss because the other party broke a contract. What compensation rule applies?",
+    "relevant_chunk_ids": [
+      "act_act-print-26_section_0084"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0060",
+          "act_act-print-26_section_0084",
+          "act_act-print-26_section_0061",
+          "act_act-print-36_section_0018",
+          "act_act-print-26_section_0089",
+          "act_act-print-36_section_0033",
+          "act_act-print-36_section_0017",
+          "act_act-print-36_section_0043",
+          "act_act-print-26_section_0075",
+          "act_act-print-48_section_0149"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0084",
+          "act_act-print-26_section_0085",
+          "act_act-print-26_section_0087",
+          "act_act-print-26_section_0086",
+          "act_act-print-157_section_0052",
+          "act_act-print-26_section_0060",
+          "act_act-print-26_section_0119",
+          "act_act-print-157_section_0029",
+          "act_act-print-26_section_0083",
+          "act_act-print-26_section_0193"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0084",
+          "act_act-print-26_section_0060",
+          "act_act-print-26_section_0086",
+          "act_act-print-26_section_0085",
+          "act_act-print-26_section_0061",
+          "act_act-print-26_section_0087",
+          "act_act-print-36_section_0018",
+          "act_act-print-157_section_0052",
+          "act_act-print-26_section_0089",
+          "act_act-print-36_section_0033"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-26_section_0084",
+          "act_act-print-26_section_0060",
+          "act_act-print-26_section_0086",
+          "act_act-print-26_section_0085",
+          "act_act-print-36_section_0018",
+          "act_act-print-26_section_0061",
+          "act_act-print-36_section_0043",
+          "act_act-print-26_section_0089",
+          "act_act-print-36_section_0017",
+          "act_act-print-26_section_0075"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r029",
+    "category": "exact_terminology",
+    "query": "Can a confession to a police officer be proved against an accused person?",
+    "relevant_chunk_ids": [
+      "act_act-print-24_section_0033"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0033",
+          "act_act-print-24_section_0035",
+          "act_act-print-24_section_0034",
+          "act_act-print-435_section_0018",
+          "act_act-print-24_section_0032",
+          "act_act-print-24_section_0038",
+          "act_act-print-75_section_0207",
+          "act_act-print-24_section_0028",
+          "act_act-print-593_section_0012",
+          "act_act-print-593_section_0002"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0033",
+          "act_act-print-24_section_0034",
+          "act_act-print-75_section_0207",
+          "act_act-print-435_section_0018",
+          "act_act-print-24_section_0035",
+          "act_act-print-24_section_0032",
+          "act_act-print-75_section_0076",
+          "act_act-print-75_section_0491",
+          "act_act-print-75_section_0196",
+          "act_act-print-75_section_0204"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0033",
+          "act_act-print-24_section_0034",
+          "act_act-print-24_section_0035",
+          "act_act-print-435_section_0018",
+          "act_act-print-75_section_0207",
+          "act_act-print-24_section_0032",
+          "act_act-print-24_section_0038",
+          "act_act-print-75_section_0213",
+          "act_act-print-75_section_0076",
+          "act_act-print-24_section_0028"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0033",
+          "act_act-print-24_section_0034",
+          "act_act-print-24_section_0035",
+          "act_act-print-24_section_0032",
+          "act_act-print-435_section_0018",
+          "act_act-print-24_section_0038",
+          "act_act-print-75_section_0207",
+          "act_act-print-75_section_0205",
+          "act_act-print-75_section_0213",
+          "act_act-print-24_section_0028"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r030",
+    "category": "exact_terminology",
+    "query": "Who has the burden of proof in a suit?",
+    "relevant_chunk_ids": [
+      "act_act-print-24_section_0131"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0132",
+          "act_act-print-24_section_0131",
+          "act_act-print-24_section_0141",
+          "act_act-print-24_section_0133",
+          "act_act-print-47_section_0031",
+          "act_act-print-24_section_0135",
+          "act_act-print-289_section_0052",
+          "act_act-print-218_section_0029",
+          "act_act-print-46_section_0145",
+          "act_act-print-65_section_0099"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.25,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0132",
+          "act_act-print-24_section_0133",
+          "act_act-print-24_section_0135",
+          "act_act-print-24_section_0131",
+          "act_act-print-24_section_0136",
+          "act_act-print-24_section_0026",
+          "act_act-print-24_section_0023",
+          "act_act-print-24_section_0025",
+          "act_act-print-24_section_0028",
+          "act_act-print-24_section_0134"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0132",
+          "act_act-print-24_section_0131",
+          "act_act-print-24_section_0133",
+          "act_act-print-24_section_0135",
+          "act_act-print-24_section_0141",
+          "act_act-print-24_section_0134",
+          "act_act-print-24_section_0188",
+          "act_act-print-24_section_0136",
+          "act_act-print-47_section_0031",
+          "act_act-print-24_section_0026"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 7,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.14285714,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0132",
+          "act_act-print-24_section_0133",
+          "act_act-print-24_section_0141",
+          "act_act-print-24_section_0135",
+          "act_act-print-24_section_0134",
+          "act_act-print-24_section_0136",
+          "act_act-print-24_section_0131",
+          "act_act-print-47_section_0031",
+          "act_act-print-218_section_0029",
+          "act_act-print-46_section_0145"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r031",
+    "category": "exact_terminology",
+    "query": "What is estoppel under the Evidence Act?",
+    "relevant_chunk_ids": [
+      "act_act-print-24_section_0145"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-138_section_0082",
+          "act_act-print-138_section_0076",
+          "act_act-print-24_section_0145",
+          "act_act-print-24_section_0151",
+          "act_act-print-24_section_0179",
+          "act_act-print-24_section_0061",
+          "act_act-print-1416_section_0009",
+          "act_act-print-11_section_0032",
+          "act_act-print-24_section_0166",
+          "act_act-print-248_section_0182"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 6,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.16666667,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0039",
+          "act_act-print-24_section_0060",
+          "act_act-print-24_section_0007",
+          "act_act-print-24_section_0022",
+          "act_act-print-24_section_0006",
+          "act_act-print-24_section_0145",
+          "act_act-print-24_section_0001",
+          "act_act-print-24_section_0057",
+          "act_act-print-24_section_0115",
+          "act_act-print-24_section_0054"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0145",
+          "act_act-print-24_section_0061",
+          "act_act-print-138_section_0082",
+          "act_act-print-24_section_0039",
+          "act_act-print-138_section_0076",
+          "act_act-print-24_section_0060",
+          "act_act-print-24_section_0007",
+          "act_act-print-24_section_0022",
+          "act_act-print-24_section_0151",
+          "act_act-print-24_section_0006"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-24_section_0039",
+          "act_act-print-24_section_0060",
+          "act_act-print-24_section_0022",
+          "act_act-print-24_section_0106",
+          "act_act-print-24_section_0054",
+          "act_act-print-24_section_0057",
+          "act_act-print-24_section_0115",
+          "act_act-print-24_section_0007",
+          "act_act-print-24_section_0006",
+          "act_act-print-24_section_0001"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r032",
+    "category": "exact_terminology",
+    "query": "When may police arrest without a warrant?",
+    "relevant_chunk_ids": [
+      "act_act-print-75_section_0071"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0073",
+          "act_act-print-75_section_0068",
+          "act_act-print-75_section_0106",
+          "act_act-print-251_section_0006",
+          "act_act-print-248_section_0080",
+          "act_act-print-256_section_0106",
+          "act_act-print-75_section_0196",
+          "act_act-print-289_section_0046",
+          "act_act-print-121_section_0004",
+          "act_act-print-75_section_0097"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-692_section_0104",
+          "act_act-print-511_section_0104",
+          "act_act-print-692_section_0056",
+          "act_act-print-75_section_0073",
+          "act_act-print-75_section_0078",
+          "act_act-print-578_section_0104",
+          "act_act-print-75_section_0075",
+          "act_act-print-75_section_0196",
+          "act_act-print-255_section_0010",
+          "act_act-print-578_section_0056"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0073",
+          "act_act-print-75_section_0068",
+          "act_act-print-511_section_0104",
+          "act_act-print-75_section_0196",
+          "act_act-print-692_section_0104",
+          "act_act-print-251_section_0006",
+          "act_act-print-75_section_0106",
+          "act_act-print-578_section_0104",
+          "act_act-print-75_section_0075",
+          "act_act-print-255_section_0010"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": null,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "reciprocal_rank": 0.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-255_section_0010",
+          "act_act-print-692_section_0104",
+          "act_act-print-511_section_0104",
+          "act_act-print-578_section_0104",
+          "act_act-print-75_section_0078",
+          "act_act-print-75_section_0068",
+          "act_act-print-75_section_0073",
+          "act_act-print-251_section_0006",
+          "act_act-print-121_section_0004",
+          "act_act-print-289_section_0046"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r033",
+    "category": "exact_terminology",
+    "query": "How is information about a cognizable offence recorded by police?",
+    "relevant_chunk_ids": [
+      "act_act-print-75_section_0194"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0190",
+          "act_act-print-132_section_0012",
+          "act_act-print-75_section_0195",
+          "act_act-print-132_section_0011",
+          "act_act-print-75_section_0194",
+          "act_act-print-75_section_0076",
+          "act_act-print-24_section_0155",
+          "act_act-print-75_section_0008",
+          "act_act-print-75_section_0071",
+          "act_act-print-363_section_0007"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 3,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.33333333,
+        "retrieved_chunk_ids": [
+          "act_act-print-692_section_0103",
+          "act_act-print-578_section_0103",
+          "act_act-print-75_section_0194",
+          "act_act-print-75_section_0076",
+          "act_act-print-75_section_0196",
+          "act_act-print-75_section_0190",
+          "act_act-print-75_section_0242",
+          "act_act-print-24_section_0189",
+          "act_act-print-60_section_0005",
+          "act_act-print-24_section_0035"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0190",
+          "act_act-print-75_section_0194",
+          "act_act-print-75_section_0076",
+          "act_act-print-692_section_0103",
+          "act_act-print-132_section_0012",
+          "act_act-print-578_section_0103",
+          "act_act-print-75_section_0195",
+          "act_act-print-132_section_0011",
+          "act_act-print-75_section_0196",
+          "act_act-print-24_section_0155"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0194",
+          "act_act-print-75_section_0190",
+          "act_act-print-75_section_0195",
+          "act_act-print-75_section_0076",
+          "act_act-print-75_section_0071",
+          "act_act-print-511_section_0016",
+          "act_act-print-578_section_0015",
+          "act_act-print-363_section_0007",
+          "act_act-print-75_section_0196",
+          "act_act-print-692_section_0103"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r034",
+    "category": "scenario",
+    "query": "How long can police keep an arrested person when investigation cannot finish within twenty-four hours?",
+    "relevant_chunk_ids": [
+      "act_act-print-75_section_0210"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 8,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.125,
+        "retrieved_chunk_ids": [
+          "act_act-print-38_section_0041",
+          "act_act-print-87_section_0009",
+          "act_act-print-578_section_0056",
+          "act_act-print-248_section_0054",
+          "act_act-print-75_section_0074",
+          "act_act-print-692_section_0056",
+          "act_act-print-75_section_0078",
+          "act_act-print-75_section_0210",
+          "act_act-print-257_section_0164",
+          "act_act-print-75_section_0073"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 7,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.14285714,
+        "retrieved_chunk_ids": [
+          "act_act-print-692_section_0056",
+          "act_act-print-578_section_0056",
+          "act_act-print-75_section_0078",
+          "act_act-print-248_section_0077",
+          "act_act-print-692_section_0049",
+          "act_act-print-87_section_0009",
+          "act_act-print-75_section_0210",
+          "act_act-print-578_section_0049",
+          "act_act-print-511_section_0049",
+          "act_act-print-511_section_0056"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.2,
+        "retrieved_chunk_ids": [
+          "act_act-print-578_section_0056",
+          "act_act-print-692_section_0056",
+          "act_act-print-87_section_0009",
+          "act_act-print-75_section_0078",
+          "act_act-print-75_section_0210",
+          "act_act-print-38_section_0041",
+          "act_act-print-248_section_0077",
+          "act_act-print-248_section_0054",
+          "act_act-print-692_section_0049",
+          "act_act-print-75_section_0074"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0210",
+          "act_act-print-578_section_0056",
+          "act_act-print-75_section_0078",
+          "act_act-print-692_section_0056",
+          "act_act-print-87_section_0009",
+          "act_act-print-38_section_0041",
+          "act_act-print-248_section_0054",
+          "act_act-print-248_section_0077",
+          "act_act-print-257_section_0164",
+          "act_act-print-75_section_0074"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r035",
+    "category": "exact_terminology",
+    "query": "When can a Magistrate take cognizance of an offence?",
+    "relevant_chunk_ids": [
+      "act_act-print-75_section_0242"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0242",
+          "act_act-print-75_section_0268",
+          "act_act-print-75_section_0582",
+          "act_act-print-308_section_0013",
+          "act_act-print-85_section_0012",
+          "act_act-print-75_section_0212",
+          "act_act-print-346_section_0032",
+          "act_act-print-645_section_0036",
+          "act_act-print-75_section_0253",
+          "act_act-print-233_section_0009"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0242",
+          "act_act-print-75_section_0243",
+          "act_act-print-75_section_0247",
+          "act_act-print-75_section_0261",
+          "act_act-print-610_section_0014",
+          "act_act-print-75_section_0196",
+          "act_act-print-75_section_0514",
+          "act_act-print-75_section_0576",
+          "act_act-print-75_section_0244",
+          "act_act-print-277_section_0004"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0242",
+          "act_act-print-75_section_0268",
+          "act_act-print-75_section_0243",
+          "act_act-print-75_section_0247",
+          "act_act-print-75_section_0582",
+          "act_act-print-308_section_0013",
+          "act_act-print-75_section_0261",
+          "act_act-print-610_section_0014",
+          "act_act-print-85_section_0012",
+          "act_act-print-75_section_0196"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.25,
+        "retrieved_chunk_ids": [
+          "act_act-print-85_section_0012",
+          "act_act-print-75_section_0243",
+          "act_act-print-308_section_0013",
+          "act_act-print-75_section_0242",
+          "act_act-print-645_section_0036",
+          "act_act-print-75_section_0253",
+          "act_act-print-346_section_0032",
+          "act_act-print-642_section_0484",
+          "act_act-print-75_section_0582",
+          "act_act-print-75_section_0261"
+        ]
+      }
+    }
+  },
+  {
+    "query_id": "r036",
+    "category": "exact_terminology",
+    "query": "When is a person entitled to bail in a bailable offence?",
+    "relevant_chunk_ids": [
+      "act_act-print-75_section_0492"
+    ],
+    "retrievers": {
+      "bm25": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0494",
+          "act_act-print-75_section_0492",
+          "act_act-print-75_section_0107",
+          "act_act-print-75_section_0068",
+          "act_act-print-65_section_0121",
+          "act_act-print-75_section_0081",
+          "act_act-print-144_section_0074",
+          "act_act-print-75_section_0008",
+          "act_act-print-75_section_0438",
+          "act_act-print-75_section_0496"
+        ]
+      },
+      "dense": {
+        "first_relevant_rank": 8,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.125,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0494",
+          "act_act-print-11_section_0250",
+          "act_act-print-26_section_0146",
+          "act_act-print-462_section_0038",
+          "act_act-print-277_section_0012",
+          "act_act-print-26_section_0132",
+          "act_act-print-26_section_0116",
+          "act_act-print-75_section_0492",
+          "act_act-print-26_section_0082",
+          "act_act-print-11_section_0259"
+        ]
+      },
+      "hybrid": {
+        "first_relevant_rank": 2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 0.5,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0494",
+          "act_act-print-75_section_0492",
+          "act_act-print-65_section_0121",
+          "act_act-print-11_section_0250",
+          "act_act-print-26_section_0146",
+          "act_act-print-75_section_0107",
+          "act_act-print-462_section_0038",
+          "act_act-print-75_section_0068",
+          "act_act-print-277_section_0012",
+          "act_act-print-26_section_0132"
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "reciprocal_rank": 1.0,
+        "retrieved_chunk_ids": [
+          "act_act-print-75_section_0492",
+          "act_act-print-75_section_0081",
+          "act_act-print-75_section_0494",
+          "act_act-print-75_section_0107",
+          "act_act-print-26_section_0146",
+          "act_act-print-75_section_0496",
+          "act_act-print-75_section_0068",
+          "act_act-print-26_section_0132",
+          "act_act-print-65_section_0121",
+          "act_act-print-26_section_0116"
+        ]
+      }
+    }
+  }
+]

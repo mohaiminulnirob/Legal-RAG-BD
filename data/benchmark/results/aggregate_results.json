@@ -1,0 +1,26 @@
+{
+  "bm25": {
+    "query_count": 36,
+    "recall_at_5": 0.694444,
+    "recall_at_10": 0.833333,
+    "mrr": 0.541545
+  },
+  "dense": {
+    "query_count": 36,
+    "recall_at_5": 0.75,
+    "recall_at_10": 0.888889,
+    "mrr": 0.592626
+  },
+  "hybrid": {
+    "query_count": 36,
+    "recall_at_5": 0.833333,
+    "recall_at_10": 0.916667,
+    "mrr": 0.672718
+  },
+  "reranker": {
+    "query_count": 36,
+    "recall_at_5": 0.75,
+    "recall_at_10": 0.833333,
+    "mrr": 0.609369
+  }
+}

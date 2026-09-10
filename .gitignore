@@ -17,6 +17,7 @@ chroma_db/*
 !chroma_db/.gitkeep
 dense_build*.log
 retrieval_evaluation*.log
+reranker_evaluation*.log
 
 # OS/editor files
 .DS_Store

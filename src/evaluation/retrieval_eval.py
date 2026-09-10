@@ -7,12 +7,12 @@ import json
 from pathlib import Path
 from typing import Any, Callable, Sequence
 
-from src.retrieval import bm25, dense, hybrid
+from src.retrieval import bm25, dense, hybrid, reranker
 
 
 DEFAULT_QUERIES = Path("data/benchmark/retrieval_queries.json")
 DEFAULT_RESULTS = Path("data/benchmark/results")
-RETRIEVER_NAMES = ("bm25", "dense", "hybrid")
+RETRIEVER_NAMES = ("bm25", "dense", "hybrid", "reranker")
 
 
 def first_relevant_rank(retrieved_ids: Sequence[str], relevant_ids: Sequence[str]) -> int | None:
@@ -100,11 +100,17 @@ def main() -> None:
     args = parser.parse_args()
 
     queries = load_queries(args.queries)
-    model = dense.create_embedding_model()
+    dense_model = dense.create_embedding_model()
+    reranker_model = reranker.create_reranker()
+
+    def hybrid_candidates(query: str) -> list[dict[str, Any]]:
+        return hybrid.search(query, top_k=args.candidate_k, candidate_k=args.candidate_k, model=dense_model)
+
     retrievers = {
         "bm25": lambda query, limit: bm25.search(query, top_k=limit),
-        "dense": lambda query, limit: dense.search(query, model, top_k=limit),
-        "hybrid": lambda query, limit: hybrid.search(query, top_k=limit, candidate_k=args.candidate_k, model=model),
+        "dense": lambda query, limit: dense.search(query, dense_model, top_k=limit),
+        "hybrid": lambda query, limit: hybrid.search(query, top_k=limit, candidate_k=args.candidate_k, model=dense_model),
+        "reranker": lambda query, limit: reranker.rerank_candidates(query, hybrid_candidates(query), reranker_model, top_k=limit),
     }
     per_query, summary = evaluate(queries, retrievers, top_k=args.top_k)
     write_results(per_query, summary, args.output_dir)

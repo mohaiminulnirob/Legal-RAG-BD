@@ -76,4 +76,14 @@ The manually curated benchmark in `data/benchmark/retrieval_queries.json` maps e
 python -m src.evaluation.retrieval_eval
 ```
 
-It writes per-query ranks and aggregate Recall@5, Recall@10, and MRR for BM25, dense retrieval, and hybrid RRF to `data/benchmark/results/`.
+It writes per-query ranks and aggregate Recall@5, Recall@10, and MRR for BM25, dense retrieval, hybrid RRF, and (after Phase 7) cross-encoder reranking to `data/benchmark/results/`.
+
+## Cross-encoder reranking
+
+Rerank the hybrid top-20 candidates with `cross-encoder/ms-marco-MiniLM-L-6-v2` (downloaded to the project-local model cache on first use):
+
+```powershell
+python -m src.retrieval.reranker search --query "A person intentionally killed another person" --top-k 5
+```
+
+Each result retains its chunk ID, statute metadata, source URL, RRF score, and cross-encoder relevance score.
