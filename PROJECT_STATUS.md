@@ -3,13 +3,13 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-10
+Last updated: 2026-09-16
 
 ## Current phase
 
-**Phase 7 — Cross-encoder reranking: implementation complete; benchmark comparison in progress**
+**Phase 8 — Conventional baseline RAG: complete**
 
-Next: **Record reranker benchmark results, then proceed to Phase 8 — Baseline RAG**
+Next: **Phase 9 — Case/query analysis**
 
 ## Completed work
 
@@ -31,6 +31,8 @@ Next: **Record reranker benchmark results, then proceed to Phase 8 — Baseline 
 | 2026-09-10 | Retrieval evaluation | Added a reproducible evaluator for BM25, dense, and hybrid RRF. | Per-query and aggregate JSON results exported; all metric tests pass. |
 | 2026-09-10 | Cross-encoder reranking | Added a hybrid-candidate reranker using `cross-encoder/ms-marco-MiniLM-L-6-v2`. | Three deterministic reranker tests pass; production model loads from project-local cache. |
 | 2026-09-10 | Reranker evaluation | Started an apples-to-apples four-retriever run on the 36-query benchmark. | CPU background worker is scoring the hybrid top-20 candidates per query. |
+| 2026-09-16 | Reranker evaluation | Completed the four-retriever comparison. | Reranker underperformed Hybrid RRF, so it remains an experimental branch. |
+| 2026-09-16 | Baseline RAG | Added a conventional Hybrid-RRF-to-LLM legal-information baseline using the OpenAI Responses API. | Context, abstention, citation traceability, API-key handling, and orchestration tests pass. |
 
 ## Current project artifacts
 
@@ -43,7 +45,11 @@ Next: **Record reranker benchmark results, then proceed to Phase 8 — Baseline 
 | `src/retrieval/bm25.py` | Builds, persists, loads, and queries the lexical BM25 index. | Implemented and validated. |
 | `src/retrieval/dense.py` | Builds and queries semantic legal retrieval with Chroma. | Implemented, unit-tested, and fully indexed. |
 | `src/retrieval/hybrid.py` | Fuses BM25 and dense candidates with Reciprocal Rank Fusion. | Implemented and validated. |
-| `src/retrieval/reranker.py` | Reranks hybrid candidates with a cross-encoder while preserving citations. | Implemented and tested; full benchmark run in progress. |
+| `src/retrieval/reranker.py` | Reranks hybrid candidates with a cross-encoder while preserving citations. | Implemented and tested; benchmark comparison complete. |
+| `src/rag/context.py` | Builds structured, bounded evidence blocks from retrieved sections. | Implemented and tested. |
+| `src/rag/prompt.py` | Defines the evidence-only legal-information prompt. | Implemented. |
+| `src/rag/llm.py` | Fixed-model OpenAI Responses API adapter. | Implemented; uses `gpt-5.2` by default. |
+| `src/rag/baseline.py` | Conventional Hybrid-RRF baseline answer generation with traceable citations. | Implemented and tested. |
 | `chroma_db/` | Persistent Chroma database for dense legal vectors. | Complete; 35,630 sections indexed. |
 | `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
 | `data/processed/bm25_index.pkl` | Persistent BM25 index and citation metadata. | Generated; 35,630 non-empty sections indexed. |
@@ -51,6 +57,7 @@ Next: **Record reranker benchmark results, then proceed to Phase 8 — Baseline 
 | `tests/test_dense.py` | Dense-index persistence and semantic ranking tests. | Passing. |
 | `tests/test_hybrid.py` | RRF fusion, duplicate merging, source preservation, and limit tests. | Passing. |
 | `tests/test_reranker.py` | Reranker scoring, ranking, metadata, limits, and tie behavior. | Passing. |
+| `tests/test_baseline_rag.py` | Context, citations, abstention, configuration, and baseline orchestration tests. | Passing. |
 | `data/benchmark/retrieval_queries.json` | Versioned, manually mapped legal retrieval benchmark. | 36 validated queries. |
 | `src/evaluation/retrieval_eval.py` | Runs retrieval experiments and exports Recall@5, Recall@10, and MRR. | Implemented and validated. |
 | `data/benchmark/results/` | Reproducible per-query and aggregate evaluation artifacts. | Generated. |
@@ -84,6 +91,8 @@ The source act number cannot serve as a unique identifier because it may be reus
 - Hybrid RRF tests pass: common documents are boosted, duplicates merge, source-only results remain, and limits are enforced.
 - The end-to-end hybrid CLI returns fused legal evidence with retriever ranks and scores.
 - Cross-encoder unit tests pass; each reranked result retains chunk ID, statute metadata, source URL, RRF score, and `reranker_score`.
+- Baseline RAG tests pass and the OpenAI SDK is pinned in `requirements.txt`.
+- The baseline uses Hybrid RRF by default; reranking is explicitly opt-in for experimentation.
 - Evaluation benchmark contains 36 manually assigned, source-validated relevant section IDs.
 - All nine retrieval and evaluation tests pass.
 
@@ -94,21 +103,22 @@ The source act number cannot serve as a unique identifier because it may be reus
 | BM25 | 0.694444 | 0.833333 | 0.541545 |
 | Dense | 0.750000 | 0.888889 | 0.592626 |
 | Hybrid RRF | **0.833333** | **0.916667** | **0.672718** |
+| Cross-encoder reranker | 0.750000 | 0.833333 | 0.609369 |
 
-These results are from the initial 36-query benchmark before reranking. They support using hybrid RRF as the candidate-retrieval baseline, but the benchmark should be expanded and independently reviewed before treating the figures as final thesis results. The corresponding four-retriever comparison is currently running.
+These results are from the initial 36-query benchmark. Hybrid RRF is the strongest configuration and is therefore the baseline RAG retriever. The reranker remains available for experiments but is not part of the default baseline. The benchmark should be expanded and independently reviewed before treating the figures as final thesis results.
 
 ## Deferred work
 
-- LLM baseline and reasoning-aware modules.
+- Case/query analysis and reasoning-aware modules.
 
 ## Next implementation task
 
-After the reranker benchmark completes, implement a conventional citation-grounded baseline RAG, including:
+Implement case/query analysis for the reasoning-aware research system, including:
 
-1. Supply the reranked top evidence sections to an LLM.
-2. Generate answer text with section-level citations and a legal-information disclaimer.
-3. Add answer-grounding tests.
-4. Use it as the standard-RAG baseline for the later reasoning-aware system.
+1. Extract stated facts, legal issues, missing facts, and query complexity.
+2. Distinguish direct factual questions from case-based legal scenarios.
+3. Add a structured, testable query-analysis output schema.
+4. Do not change the conventional baseline RAG path while building this next layer.
 
 ## Update rule
 

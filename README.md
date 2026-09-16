@@ -87,3 +87,13 @@ python -m src.retrieval.reranker search --query "A person intentionally killed a
 ```
 
 Each result retains its chunk ID, statute metadata, source URL, RRF score, and cross-encoder relevance score.
+
+## Baseline RAG
+
+Copy `.env.example` to `.env`, set `OPENAI_API_KEY`, and keep `BASELINE_RAG_MODEL` unchanged for reproducible initial experiments. Then run the conventional Hybrid-RRF baseline:
+
+```powershell
+python -m src.rag.baseline --query "What punishment applies for murder?" --top-k 5
+```
+
+The default path uses Hybrid RRF directly. `--use-reranker` is available only for comparison experiments because it performed worse than Hybrid RRF on the initial 36-query benchmark.
