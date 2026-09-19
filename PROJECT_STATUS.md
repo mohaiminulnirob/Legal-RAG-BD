@@ -3,7 +3,7 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-16
+Last updated: 2026-09-19
 
 ## Current phase
 
@@ -33,6 +33,7 @@ Next: **Phase 9 — Case/query analysis**
 | 2026-09-10 | Reranker evaluation | Started an apples-to-apples four-retriever run on the 36-query benchmark. | CPU background worker is scoring the hybrid top-20 candidates per query. |
 | 2026-09-16 | Reranker evaluation | Completed the four-retriever comparison. | Reranker underperformed Hybrid RRF, so it remains an experimental branch. |
 | 2026-09-16 | Baseline RAG | Added a conventional Hybrid-RRF-to-LLM legal-information baseline using the OpenAI Responses API. | Context, abstention, citation traceability, API-key handling, and orchestration tests pass. |
+| 2026-09-19 | Baseline RAG provider | Switched the fixed baseline LLM provider to Groq using its OpenAI-compatible Responses API. | Groq key/base-URL configuration tests pass; retrieval code unchanged. |
 
 ## Current project artifacts
 
@@ -48,7 +49,7 @@ Next: **Phase 9 — Case/query analysis**
 | `src/retrieval/reranker.py` | Reranks hybrid candidates with a cross-encoder while preserving citations. | Implemented and tested; benchmark comparison complete. |
 | `src/rag/context.py` | Builds structured, bounded evidence blocks from retrieved sections. | Implemented and tested. |
 | `src/rag/prompt.py` | Defines the evidence-only legal-information prompt. | Implemented. |
-| `src/rag/llm.py` | Fixed-model OpenAI Responses API adapter. | Implemented; uses `gpt-5.2` by default. |
+| `src/rag/llm.py` | Fixed-model Groq Responses API adapter using the OpenAI client. | Implemented; uses `openai/gpt-oss-120b` by default. |
 | `src/rag/baseline.py` | Conventional Hybrid-RRF baseline answer generation with traceable citations. | Implemented and tested. |
 | `chroma_db/` | Persistent Chroma database for dense legal vectors. | Complete; 35,630 sections indexed. |
 | `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
@@ -91,7 +92,8 @@ The source act number cannot serve as a unique identifier because it may be reus
 - Hybrid RRF tests pass: common documents are boosted, duplicates merge, source-only results remain, and limits are enforced.
 - The end-to-end hybrid CLI returns fused legal evidence with retriever ranks and scores.
 - Cross-encoder unit tests pass; each reranked result retains chunk ID, statute metadata, source URL, RRF score, and `reranker_score`.
-- Baseline RAG tests pass and the OpenAI SDK is pinned in `requirements.txt`.
+- Baseline RAG tests pass and the OpenAI-compatible Python SDK is pinned in `requirements.txt`.
+- Baseline API requests use `GROQ_API_KEY` and `https://api.groq.com/openai/v1` without affecting retrieval.
 - The baseline uses Hybrid RRF by default; reranking is explicitly opt-in for experimentation.
 - Evaluation benchmark contains 36 manually assigned, source-validated relevant section IDs.
 - All nine retrieval and evaluation tests pass.

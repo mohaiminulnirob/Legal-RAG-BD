@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from src.rag.baseline import answer_query
 from src.rag.context import build_context
-from src.rag.llm import OpenAIResponsesLLM
+from src.rag.llm import DEFAULT_MODEL, GROQ_BASE_URL, GroqResponsesLLM
 
 
 class FakeLLM:
@@ -62,7 +62,14 @@ class BaselineRAGTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             answer_query("question", FakeLLM(), top_k=5, candidate_k=4)
 
-    @patch.dict("os.environ", {"OPENAI_API_KEY": ""}, clear=False)
-    def test_openai_client_requires_an_api_key(self) -> None:
-        with self.assertRaisesRegex(RuntimeError, "OPENAI_API_KEY"):
-            OpenAIResponsesLLM()
+    @patch.dict("os.environ", {"GROQ_API_KEY": ""}, clear=False)
+    def test_groq_client_requires_an_api_key(self) -> None:
+        with self.assertRaisesRegex(RuntimeError, "GROQ_API_KEY"):
+            GroqResponsesLLM()
+
+    @patch("openai.OpenAI")
+    @patch.dict("os.environ", {"GROQ_API_KEY": "test-key"}, clear=False)
+    def test_groq_client_uses_openai_compatible_configuration(self, openai_client) -> None:
+        llm = GroqResponsesLLM()
+        openai_client.assert_called_once_with(api_key="test-key", base_url=GROQ_BASE_URL)
+        self.assertEqual(llm.model, DEFAULT_MODEL)

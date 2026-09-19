@@ -1,4 +1,4 @@
-"""Fixed OpenAI Responses API client for baseline experiments."""
+"""Fixed Groq Responses API client for baseline experiments."""
 
 from __future__ import annotations
 
@@ -8,7 +8,8 @@ from typing import Protocol
 from dotenv import load_dotenv
 
 
-DEFAULT_MODEL = "gpt-5.2"
+DEFAULT_MODEL = "openai/gpt-oss-120b"
+GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
 
 class LLMClient(Protocol):
@@ -17,18 +18,19 @@ class LLMClient(Protocol):
     def generate(self, system_prompt: str, user_prompt: str) -> str: ...
 
 
-class OpenAIResponsesLLM:
-    """OpenAI Responses API adapter using one fixed model for the experiment."""
+class GroqResponsesLLM:
+    """Groq's OpenAI-compatible Responses API adapter for the baseline."""
 
     def __init__(self, model: str = DEFAULT_MODEL) -> None:
         load_dotenv()
-        if not os.getenv("OPENAI_API_KEY"):
-            raise RuntimeError("OPENAI_API_KEY is not set. Add it to .env before running the baseline RAG CLI.")
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise RuntimeError("GROQ_API_KEY is not set. Add it to .env before running the baseline RAG CLI.")
         try:
             from openai import OpenAI
         except ImportError as error:
             raise RuntimeError("The openai package is not installed. Run: python -m pip install openai") from error
-        self._client = OpenAI()
+        self._client = OpenAI(api_key=api_key, base_url=GROQ_BASE_URL)
         self.model = model
 
     def generate(self, system_prompt: str, user_prompt: str) -> str:
@@ -36,8 +38,6 @@ class OpenAIResponsesLLM:
             model=self.model,
             instructions=system_prompt,
             input=user_prompt,
-            reasoning={"effort": "none"},
-            text={"verbosity": "low"},
             max_output_tokens=1_000,
             store=False,
         )

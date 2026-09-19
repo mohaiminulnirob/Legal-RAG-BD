@@ -90,7 +90,7 @@ Each result retains its chunk ID, statute metadata, source URL, RRF score, and c
 
 ## Baseline RAG
 
-Copy `.env.example` to `.env`, set `OPENAI_API_KEY`, and keep `BASELINE_RAG_MODEL` unchanged for reproducible initial experiments. Then run the conventional Hybrid-RRF baseline:
+Copy `.env.example` to `.env` and set `GROQ_API_KEY`. The fixed baseline model is `openai/gpt-oss-120b` through Groq's OpenAI-compatible Responses API. Then run the conventional Hybrid-RRF baseline:
 
 ```powershell
 python -m src.rag.baseline --query "What punishment applies for murder?" --top-k 5
