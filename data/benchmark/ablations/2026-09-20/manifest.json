@@ -1,0 +1,310 @@
+{
+  "status": "complete",
+  "started_utc": "2026-09-20T16:29:32.191136+00:00",
+  "query_sha256": "5b5468ebf5edc20634207ec1c41c7afa9fdf64e281e528b27f26bae4ba689cb5",
+  "query_count": 36,
+  "bm25_sha256": "b792f830f3846387aa5594be26273b26b6f613e471ee25b5d3487d81241f6fc3",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "settings": [
+    {
+      "candidate_k": 20,
+      "rrf_k": 20,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 20,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 20,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 20,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 40,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 40,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 40,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 40,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 60,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 60,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 60,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 60,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 100,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 100,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 100,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 20,
+      "rrf_k": 100,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 20,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 20,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 20,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 20,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 40,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 40,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 40,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 40,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 60,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 60,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 60,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 60,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 100,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 100,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 100,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 50,
+      "rrf_k": 100,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 20,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 20,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 20,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 20,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 40,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 40,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 40,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 40,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 60,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 60,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 60,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 60,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 100,
+      "bm25_weight": 1.0,
+      "dense_weight": 1.0
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 100,
+      "bm25_weight": 0.8,
+      "dense_weight": 1.2
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 100,
+      "bm25_weight": 0.6,
+      "dense_weight": 1.4
+    },
+    {
+      "candidate_k": 100,
+      "rrf_k": 100,
+      "bm25_weight": 0.5,
+      "dense_weight": 1.5
+    }
+  ],
+  "final_cutoffs": [
+    5,
+    10
+  ],
+  "note": "Development-set tuning, not held-out performance. MRR is truncated at 10. Dense is queried separately at each pool size; ANN prefixes may differ.",
+  "source_sha256": {
+    "src/retrieval/bm25.py": "7128c47edd28101a6f990066c16d1fe104281e1b4f042b1cd9c5b01cadecd945",
+    "src/retrieval/dense.py": "b569064c86b90b7065a59be4a6e07463bfecce2674fbebcc4a40e93675bbf0d2",
+    "src/retrieval/hybrid.py": "7168edca5934c639a498611837da1a94cb6945464d21be9b237b6cdba06d1076",
+    "C:\\Users\\LENOVO\\Desktop\\RAG agent\\Legal_RAG\\src\\evaluation\\retrieval_ablation.py": "72d2d808cc2c44f2ac9a52de2d8de789c985d0232441adb495e82e1beb626fb2"
+  },
+  "finished_utc": "2026-09-20T16:32:23.531092+00:00"
+}

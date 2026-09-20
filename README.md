@@ -88,7 +88,27 @@ python -m src.retrieval.reranker search --query "A person intentionally killed a
 
 Each result retains its chunk ID, statute metadata, source URL, RRF score, and cross-encoder relevance score.
 
-## Baseline RAG
+## Retrieval ablation experiments
+
+Run the existing 36-query benchmark with candidate pools 20/50/100, RRF constants
+20/40/60/100, and BM25/dense weights 1/1, 0.8/1.2, 0.6/1.4, 0.5/1.5:
+
+```powershell
+python -m src.evaluation.retrieval_ablation --output-dir data/benchmark/ablations/my-new-run
+python -m unittest tests.test_retrieval_ablation -v
+```
+
+Use a new output directory for every run. The runner preserves the production
+retrievers and baseline settings, records input/source hashes and raw candidate
+ranks, and writes per-query and aggregate results for all 48 combinations.
+`manifest.json` is marked `complete` only after the results are saved.
+The separate murder-query diagnostic is excluded from benchmark averages.
+Metrics are true Recall@5/10, Hit@5/10, and MRR@10; older evaluation fields called
+recall are hit rates (equivalent for this benchmark's single-label queries).
+These are development-set tuning results, requiring held-out evaluation before
+making general improvement claims. No query expansion or reranker is applied.
+
+## Baseline RAG usage
 
 Copy `.env.example` to `.env` and set `GROQ_API_KEY`. The fixed baseline model is `openai/gpt-oss-120b` through Groq's OpenAI-compatible Responses API. Then run the conventional Hybrid-RRF baseline:
 

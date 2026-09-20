@@ -1,0 +1,1101 @@
+{
+  "query": {
+    "query_id": "r019",
+    "category": "exact_section",
+    "query": "Section 500 punishment for defamation",
+    "relevant_chunk_ids": [
+      "act_act-print-11_section_0570"
+    ],
+    "rationale": "Penal Code section 500 prescribes punishment for defamation."
+  },
+  "bm25": [
+    {
+      "chunk_id": "act_act-print-11_section_0559",
+      "score": 17.104056
+    },
+    {
+      "chunk_id": "act_act-print-138_section_0174",
+      "score": 16.001572
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0562",
+      "score": 15.377194
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0129",
+      "score": 14.945099
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0560",
+      "score": 14.733157
+    },
+    {
+      "chunk_id": "act_act-print-69_section_0047",
+      "score": 14.669283
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0158",
+      "score": 14.572325
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0148",
+      "score": 14.475427
+    },
+    {
+      "chunk_id": "act_act-print-69_section_0050",
+      "score": 14.352815
+    },
+    {
+      "chunk_id": "act_act-print-46_section_0006",
+      "score": 14.338298
+    },
+    {
+      "chunk_id": "act_act-print-26_section_0196",
+      "score": 14.265142
+    },
+    {
+      "chunk_id": "act_act-print-1409_section_0031",
+      "score": 14.198411
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0085",
+      "score": 14.080897
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0565",
+      "score": 14.056547
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0078",
+      "score": 13.85666
+    },
+    {
+      "chunk_id": "act_act-print-48_section_0031",
+      "score": 13.802129
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0072",
+      "score": 13.791422
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0480",
+      "score": 13.684138
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0497",
+      "score": 13.681395
+    },
+    {
+      "chunk_id": "act_act-print-77_section_0028",
+      "score": 13.619845
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0563",
+      "score": 13.55525
+    },
+    {
+      "chunk_id": "act_act-print-269_section_0005",
+      "score": 13.461262
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0048",
+      "score": 13.385866
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0161",
+      "score": 13.215603
+    },
+    {
+      "chunk_id": "act_act-print-260_section_0012",
+      "score": 13.185248
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0122",
+      "score": 13.180454
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0134",
+      "score": 13.113593
+    },
+    {
+      "chunk_id": "act_act-print-302_section_0008",
+      "score": 13.088633
+    },
+    {
+      "chunk_id": "act_act-print-138_section_0158",
+      "score": 12.924767
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0119",
+      "score": 12.899534
+    },
+    {
+      "chunk_id": "act_act-print-138_section_0152",
+      "score": 12.819833
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0506",
+      "score": 12.79615
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0570",
+      "score": 12.710379
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0259",
+      "score": 12.656307
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0138",
+      "score": 12.581814
+    },
+    {
+      "chunk_id": "act_act-print-69_section_0051",
+      "score": 12.413174
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0187",
+      "score": 12.383348
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0351",
+      "score": 12.355576
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0062",
+      "score": 12.246106
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0064",
+      "score": 12.228859
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0079",
+      "score": 12.204673
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0181",
+      "score": 12.147578
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0151",
+      "score": 12.140768
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0177",
+      "score": 12.073347
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0141",
+      "score": 12.067066
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0088",
+      "score": 12.001849
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0076",
+      "score": 11.979674
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0561",
+      "score": 11.944615
+    },
+    {
+      "chunk_id": "act_act-print-1076_section_0054",
+      "score": 11.915295
+    },
+    {
+      "chunk_id": "act_act-print-1324_section_0008",
+      "score": 11.900331
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0132",
+      "score": 11.887767
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0081",
+      "score": 11.881493
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0153",
+      "score": 11.879484
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0569",
+      "score": 11.862089
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0179",
+      "score": 11.843241
+    },
+    {
+      "chunk_id": "act_act-print-90_section_0101",
+      "score": 11.835654
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0157",
+      "score": 11.829127
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0163",
+      "score": 11.829127
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0089",
+      "score": 11.805181
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0190",
+      "score": 11.790024
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0275",
+      "score": 11.774444
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0076",
+      "score": 11.764966
+    },
+    {
+      "chunk_id": "act_act-print-48_section_0027",
+      "score": 11.699258
+    },
+    {
+      "chunk_id": "act_act-print-642_section_0504",
+      "score": 11.691448
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0063",
+      "score": 11.678562
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0078",
+      "score": 11.644042
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0077",
+      "score": 11.627101
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0579",
+      "score": 11.499431
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0039",
+      "score": 11.430498
+    },
+    {
+      "chunk_id": "act_act-print-642_section_0503",
+      "score": 11.409435
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0078",
+      "score": 11.376632
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0060",
+      "score": 11.336454
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0425",
+      "score": 11.3225
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0059",
+      "score": 11.244288
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0019",
+      "score": 11.210417
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0024",
+      "score": 11.156901
+    },
+    {
+      "chunk_id": "act_act-print-216_section_0004",
+      "score": 11.146352
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0023",
+      "score": 11.139179
+    },
+    {
+      "chunk_id": "act_act-print-1163_section_0061",
+      "score": 11.078946
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0077",
+      "score": 11.058959
+    },
+    {
+      "chunk_id": "act_act-print-138_section_0309",
+      "score": 11.032814
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0069",
+      "score": 10.99995
+    },
+    {
+      "chunk_id": "act_act-print-1163_section_0060",
+      "score": 10.982905
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0109",
+      "score": 10.97342
+    },
+    {
+      "chunk_id": "act_act-print-310_section_0137",
+      "score": 10.970064
+    },
+    {
+      "chunk_id": "act_act-print-487_section_0012",
+      "score": 10.958406
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0083",
+      "score": 10.931702
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0568",
+      "score": 10.915925
+    },
+    {
+      "chunk_id": "act_act-print-120_section_0003",
+      "score": 10.896665
+    },
+    {
+      "chunk_id": "act_act-print-488_section_0005",
+      "score": 10.852969
+    },
+    {
+      "chunk_id": "act_act-print-367_section_0045",
+      "score": 10.784017
+    },
+    {
+      "chunk_id": "act_act-print-69_section_0012",
+      "score": 10.77403
+    },
+    {
+      "chunk_id": "act_act-print-75_section_0045",
+      "score": 10.773012
+    },
+    {
+      "chunk_id": "act_act-print-403_section_0020",
+      "score": 10.756834
+    },
+    {
+      "chunk_id": "act_act-print-1241_section_0037",
+      "score": 10.750206
+    },
+    {
+      "chunk_id": "act_act-print-256_section_0092",
+      "score": 10.746569
+    },
+    {
+      "chunk_id": "act_act-print-26_section_0050",
+      "score": 10.745566
+    },
+    {
+      "chunk_id": "act_act-print-248_section_0046",
+      "score": 10.735777
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0564",
+      "score": 10.726116
+    },
+    {
+      "chunk_id": "act_act-print-11_section_0061",
+      "score": 10.712927
+    }
+  ],
+  "dense": {
+    "20": [
+      {
+        "chunk_id": "act_act-print-1241_section_0037",
+        "similarity": 0.718138
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0559",
+        "similarity": 0.71504
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0265",
+        "similarity": 0.704559
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0332",
+        "similarity": 0.70383
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0060",
+        "similarity": 0.703337
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0079",
+        "similarity": 0.703021
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0574",
+        "similarity": 0.702643
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0560",
+        "similarity": 0.700486
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0561",
+        "similarity": 0.697423
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0581",
+        "similarity": 0.696591
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0242",
+        "similarity": 0.696128
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0079",
+        "similarity": 0.695242
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0078",
+        "similarity": 0.693275
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0143",
+        "similarity": 0.693167
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0565",
+        "similarity": 0.692628
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0567",
+        "similarity": 0.689514
+      },
+      {
+        "chunk_id": "act_act-print-417_section_0041",
+        "similarity": 0.687081
+      },
+      {
+        "chunk_id": "act_act-print-1533_section_0003",
+        "similarity": 0.686875
+      },
+      {
+        "chunk_id": "act_act-print-1390_section_0026",
+        "similarity": 0.686484
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0172",
+        "similarity": 0.686408
+      }
+    ],
+    "50": [
+      {
+        "chunk_id": "act_act-print-1241_section_0037",
+        "similarity": 0.718138
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0559",
+        "similarity": 0.71504
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0265",
+        "similarity": 0.704559
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0332",
+        "similarity": 0.70383
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0060",
+        "similarity": 0.703337
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0079",
+        "similarity": 0.703021
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0574",
+        "similarity": 0.702643
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0560",
+        "similarity": 0.700486
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0561",
+        "similarity": 0.697423
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0581",
+        "similarity": 0.696591
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0242",
+        "similarity": 0.696128
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0079",
+        "similarity": 0.695242
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0078",
+        "similarity": 0.693275
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0143",
+        "similarity": 0.693167
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0565",
+        "similarity": 0.692628
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0567",
+        "similarity": 0.689514
+      },
+      {
+        "chunk_id": "act_act-print-417_section_0041",
+        "similarity": 0.687081
+      },
+      {
+        "chunk_id": "act_act-print-1533_section_0003",
+        "similarity": 0.686875
+      },
+      {
+        "chunk_id": "act_act-print-1390_section_0026",
+        "similarity": 0.686484
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0172",
+        "similarity": 0.686408
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0006",
+        "similarity": 0.686267
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0339",
+        "similarity": 0.685221
+      },
+      {
+        "chunk_id": "act_act-print-273_section_0044",
+        "similarity": 0.684591
+      },
+      {
+        "chunk_id": "act_act-print-416_section_0041",
+        "similarity": 0.683839
+      },
+      {
+        "chunk_id": "act_act-print-444_section_0040",
+        "similarity": 0.682924
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0049",
+        "similarity": 0.682645
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0338",
+        "similarity": 0.680782
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0336",
+        "similarity": 0.68043
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0562",
+        "similarity": 0.678947
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0254",
+        "similarity": 0.678871
+      },
+      {
+        "chunk_id": "act_act-print-55_section_0034",
+        "similarity": 0.677995
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0081",
+        "similarity": 0.677881
+      },
+      {
+        "chunk_id": "act_act-print-1076_section_0054",
+        "similarity": 0.677857
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0079",
+        "similarity": 0.677815
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0049",
+        "similarity": 0.677165
+      },
+      {
+        "chunk_id": "act_act-print-55_section_0028",
+        "similarity": 0.676983
+      },
+      {
+        "chunk_id": "act_act-print-194_section_0009",
+        "similarity": 0.675666
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0174",
+        "similarity": 0.673716
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0078",
+        "similarity": 0.673525
+      },
+      {
+        "chunk_id": "act_act-print-740_section_0021",
+        "similarity": 0.673296
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0579",
+        "similarity": 0.672822
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0570",
+        "similarity": 0.672282
+      },
+      {
+        "chunk_id": "act_act-print-220_section_0024",
+        "similarity": 0.670934
+      },
+      {
+        "chunk_id": "act_act-print-1376_section_0003",
+        "similarity": 0.669978
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0531",
+        "similarity": 0.66959
+      },
+      {
+        "chunk_id": "act_act-print-187_section_0029",
+        "similarity": 0.669013
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0049",
+        "similarity": 0.668555
+      },
+      {
+        "chunk_id": "act_act-print-261_section_0005",
+        "similarity": 0.668292
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0566",
+        "similarity": 0.668202
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0194",
+        "similarity": 0.667928
+      }
+    ],
+    "100": [
+      {
+        "chunk_id": "act_act-print-1241_section_0037",
+        "similarity": 0.718138
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0559",
+        "similarity": 0.71504
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0265",
+        "similarity": 0.704559
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0332",
+        "similarity": 0.70383
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0060",
+        "similarity": 0.703337
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0079",
+        "similarity": 0.703021
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0574",
+        "similarity": 0.702643
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0560",
+        "similarity": 0.700486
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0561",
+        "similarity": 0.697423
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0581",
+        "similarity": 0.696591
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0242",
+        "similarity": 0.696128
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0079",
+        "similarity": 0.695242
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0078",
+        "similarity": 0.693275
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0143",
+        "similarity": 0.693167
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0565",
+        "similarity": 0.692628
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0567",
+        "similarity": 0.689514
+      },
+      {
+        "chunk_id": "act_act-print-417_section_0041",
+        "similarity": 0.687081
+      },
+      {
+        "chunk_id": "act_act-print-1533_section_0003",
+        "similarity": 0.686875
+      },
+      {
+        "chunk_id": "act_act-print-1390_section_0026",
+        "similarity": 0.686484
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0172",
+        "similarity": 0.686408
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0006",
+        "similarity": 0.686267
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0339",
+        "similarity": 0.685221
+      },
+      {
+        "chunk_id": "act_act-print-273_section_0044",
+        "similarity": 0.684591
+      },
+      {
+        "chunk_id": "act_act-print-416_section_0041",
+        "similarity": 0.683839
+      },
+      {
+        "chunk_id": "act_act-print-444_section_0040",
+        "similarity": 0.682924
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0049",
+        "similarity": 0.682645
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0338",
+        "similarity": 0.680782
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0336",
+        "similarity": 0.68043
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0562",
+        "similarity": 0.678947
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0254",
+        "similarity": 0.678871
+      },
+      {
+        "chunk_id": "act_act-print-55_section_0034",
+        "similarity": 0.677995
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0081",
+        "similarity": 0.677881
+      },
+      {
+        "chunk_id": "act_act-print-1076_section_0054",
+        "similarity": 0.677857
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0079",
+        "similarity": 0.677815
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0049",
+        "similarity": 0.677165
+      },
+      {
+        "chunk_id": "act_act-print-55_section_0028",
+        "similarity": 0.676983
+      },
+      {
+        "chunk_id": "act_act-print-194_section_0009",
+        "similarity": 0.675666
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0174",
+        "similarity": 0.673716
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0078",
+        "similarity": 0.673525
+      },
+      {
+        "chunk_id": "act_act-print-740_section_0021",
+        "similarity": 0.673296
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0579",
+        "similarity": 0.672822
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0570",
+        "similarity": 0.672282
+      },
+      {
+        "chunk_id": "act_act-print-220_section_0024",
+        "similarity": 0.670934
+      },
+      {
+        "chunk_id": "act_act-print-1376_section_0003",
+        "similarity": 0.669978
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0531",
+        "similarity": 0.66959
+      },
+      {
+        "chunk_id": "act_act-print-187_section_0029",
+        "similarity": 0.669013
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0049",
+        "similarity": 0.668555
+      },
+      {
+        "chunk_id": "act_act-print-261_section_0005",
+        "similarity": 0.668292
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0566",
+        "similarity": 0.668202
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0194",
+        "similarity": 0.667928
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0007",
+        "similarity": 0.667891
+      },
+      {
+        "chunk_id": "act_act-print-1510_section_0010",
+        "similarity": 0.667204
+      },
+      {
+        "chunk_id": "act_act-print-1510_section_0009",
+        "similarity": 0.666813
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0059",
+        "similarity": 0.666476
+      },
+      {
+        "chunk_id": "act_act-print-245_section_0005",
+        "similarity": 0.66519
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0337",
+        "similarity": 0.664631
+      },
+      {
+        "chunk_id": "act_act-print-24_section_0185",
+        "similarity": 0.664375
+      },
+      {
+        "chunk_id": "act_act-print-578_section_0081",
+        "similarity": 0.663696
+      },
+      {
+        "chunk_id": "act_act-print-1031_section_0020",
+        "similarity": 0.663117
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0571",
+        "similarity": 0.663001
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0004",
+        "similarity": 0.662874
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0573",
+        "similarity": 0.662582
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0005",
+        "similarity": 0.662433
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0310",
+        "similarity": 0.662318
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0572",
+        "similarity": 0.662151
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0307",
+        "similarity": 0.661897
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0214",
+        "similarity": 0.661651
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0061",
+        "similarity": 0.661198
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0476",
+        "similarity": 0.661105
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0563",
+        "similarity": 0.66102
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0173",
+        "similarity": 0.660447
+      },
+      {
+        "chunk_id": "act_act-print-1163_section_0057",
+        "similarity": 0.660107
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0191",
+        "similarity": 0.659684
+      },
+      {
+        "chunk_id": "act_act-print-1008_section_0008",
+        "similarity": 0.659282
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0171",
+        "similarity": 0.658672
+      },
+      {
+        "chunk_id": "act_act-print-55_section_0036",
+        "similarity": 0.658272
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0081",
+        "similarity": 0.658176
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0167",
+        "similarity": 0.658152
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0311",
+        "similarity": 0.657934
+      },
+      {
+        "chunk_id": "act_act-print-437_section_0033",
+        "similarity": 0.657737
+      },
+      {
+        "chunk_id": "act_act-print-511_section_0078",
+        "similarity": 0.656955
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0401",
+        "similarity": 0.656841
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0399",
+        "similarity": 0.656832
+      },
+      {
+        "chunk_id": "act_act-print-745_section_0018",
+        "similarity": 0.655816
+      },
+      {
+        "chunk_id": "act_act-print-1434_section_0010",
+        "similarity": 0.655611
+      },
+      {
+        "chunk_id": "act_act-print-185_section_0018",
+        "similarity": 0.655581
+      },
+      {
+        "chunk_id": "act_act-print-391_section_0004",
+        "similarity": 0.655359
+      },
+      {
+        "chunk_id": "act_act-print-1517_section_0003",
+        "similarity": 0.65512
+      },
+      {
+        "chunk_id": "act_act-print-918_section_0009",
+        "similarity": 0.654978
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0488",
+        "similarity": 0.654971
+      },
+      {
+        "chunk_id": "act_act-print-1510_section_0014",
+        "similarity": 0.654932
+      },
+      {
+        "chunk_id": "act_act-print-415_section_0051",
+        "similarity": 0.65493
+      },
+      {
+        "chunk_id": "act_act-print-424_section_0092",
+        "similarity": 0.654512
+      },
+      {
+        "chunk_id": "act_act-print-194_section_0008",
+        "similarity": 0.65446
+      },
+      {
+        "chunk_id": "act_act-print-1076_section_0053",
+        "similarity": 0.654421
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0060",
+        "similarity": 0.654283
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0096",
+        "similarity": 0.654228
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0308",
+        "similarity": 0.654067
+      },
+      {
+        "chunk_id": "act_act-print-692_section_0080",
+        "similarity": 0.654033
+      },
+      {
+        "chunk_id": "act_act-print-11_section_0201",
+        "similarity": 0.653755
+      }
+    ]
+  }
+}

@@ -52,6 +52,17 @@ def answer_query(
         raise ValueError("candidate_k must be greater than or equal to a positive top_k.")
 
     evidence = hybrid.search(query, top_k=candidate_k if use_reranker else top_k, candidate_k=candidate_k, model=retrieval_model)
+    # Temporary diagnostic: inspect evidence immediately after hybrid retrieval.
+    print("\n===== BASELINE HYBRID RESULTS =====", flush=True)
+    for rank, item in enumerate(evidence, start=1):
+        print(
+            f"{rank}. {item.get('act_title')} | "
+            f"section={item.get('section_id')} | chunk={item.get('chunk_id')} | "
+            f"RRF={item.get('rrf_score')} | BM25 rank={item.get('bm25_rank')} | "
+            f"Dense rank={item.get('dense_rank')}",
+            flush=True,
+        )
+    print("===================================\n", flush=True)
     if use_reranker:
         evidence = reranker.rerank_candidates(query, evidence, reranker_model or reranker.create_reranker(), top_k=top_k)
 

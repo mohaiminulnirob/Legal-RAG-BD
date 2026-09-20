@@ -3,7 +3,7 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-19
+Last updated: 2026-09-20
 
 ## Current phase
 
@@ -78,6 +78,13 @@ Each processed record contains:
 The source act number cannot serve as a unique identifier because it may be reused. The processed `chunk_id` therefore uses the source file plus the section's position within that act.
 
 ## Verification summary
+
+- 2026-09-20 retrieval ablation completed: 48 configurations on the unchanged 36 queries plus one excluded diagnostic. Added `src/evaluation/retrieval_ablation.py`, three passing tests, and a README command. Results, raw ranks and run manifest are in `data/benchmark/ablations/2026-09-20/`; see `REPORT.md` for all single-factor comparisons and limitations. Production defaults remain unchanged.
+- Ablation control reproduced Hybrid RRF Recall@5 0.833333, Recall@10 0.916667, MRR@10 0.672718. Pool 100 alone yielded 0.861111 / 0.972222 / 0.680556. Best grid MRR@10 was 0.692008 (pool 100, RRF 60, weights 0.8/1.2); highest Recall@5 was 0.888889. Treat this benchmark as development data after tuning; validate on independent queries before promoting a setting.
+
+- 2026-09-20 diagnostic: for `What punishment applies for murder?`, the exact Hybrid CLI and baseline (`top_k=5`, `candidate_k=20`) both returned chunk suffixes 0351, 0125, 0040, 0342, 0118. A temporary print immediately after baseline retrieval records the ranks and scores. No retrieval logic or indexes were changed.
+- Penal Code section 302 (`act_act-print-11_section_0344`) ranks 7 with the baseline candidate pool: dense rank 2, absent from BM25 top 20, RRF 0.01612903. The earlier reported hybrid rank 3 used `candidate_k=100`, so it did not describe the baseline. The live baseline completed and reported insufficient evidence.
+- The displayed section label 342 on chunk 0342 is a separate preprocessing concern: its text contains homicide exceptions, so the position-derived section label needs review before trusting citations.
 
 - `src` compiles successfully.
 - Preprocessor command executes successfully against the real dataset.
