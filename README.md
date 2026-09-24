@@ -6,6 +6,8 @@ Implementation progress is tracked in [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
 ## Phase 1 setup
 
+Use Python 3.11 or newer.
+
 1. Create and activate the virtual environment:
 
    ```powershell
@@ -77,6 +79,30 @@ python -m src.evaluation.retrieval_eval
 ```
 
 It writes per-query ranks and aggregate Recall@5, Recall@10, and MRR for BM25, dense retrieval, hybrid RRF, and (after Phase 7) cross-encoder reranking to `data/benchmark/results/`.
+
+## Phase 9 query/case analysis
+
+Analyze query type, complexity, and deterministic surface signals without an
+LLM:
+
+```powershell
+python -m src.analysis.query_analyzer --query "A person was injured during an argument. What offence and punishment may apply?"
+python -m unittest tests.test_query_analyzer -v
+```
+
+Optional Groq assistance can extract issue and fact spans that must match exact
+text in the user's query. Its JSON output and spans are validated. It is not
+used for legal conclusions, evidence sufficiency, or retrieval control:
+
+Set `GROQ_API_KEY` in `.env` before using `--llm-assisted`.
+
+```powershell
+python -m src.analysis.query_analyzer --query "A person was injured during an argument. What offence and punishment may apply?" --llm-assisted
+```
+
+The output is a versioned JSON `QueryAnalysis` record. Deterministic analysis
+works offline, and invalid LLM output is ignored with a warning. This phase
+does not alter the conventional baseline, preserving it for later ablations.
 
 ## Cross-encoder reranking
 

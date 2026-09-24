@@ -3,13 +3,13 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-20
+Last updated: 2026-09-24
 
 ## Current phase
 
-**Phase 8 — Conventional baseline RAG: complete**
+**Phase 9 — Case/query analysis: complete**
 
-Next: **Phase 9 — Case/query analysis**
+Phase 8 conventional baseline remains available as the comparison system.
 
 ## Completed work
 
@@ -34,6 +34,8 @@ Next: **Phase 9 — Case/query analysis**
 | 2026-09-16 | Reranker evaluation | Completed the four-retriever comparison. | Reranker underperformed Hybrid RRF, so it remains an experimental branch. |
 | 2026-09-16 | Baseline RAG | Added a conventional Hybrid-RRF-to-LLM legal-information baseline using the OpenAI Responses API. | Context, abstention, citation traceability, API-key handling, and orchestration tests pass. |
 | 2026-09-19 | Baseline RAG provider | Switched the fixed baseline LLM provider to Groq using its OpenAI-compatible Responses API. | Groq key/base-URL configuration tests pass; retrieval code unchanged. |
+| 2026-09-24 | Phase 9 query/case analysis | Added deterministic query kind/complexity signals, versioned structured output, and opt-in Groq span extraction; baseline behavior remains unchanged. | Four Phase 9 unit tests pass; seven representative offline CLI cases inspected. |
+| 2026-09-24 | Phase 9 classification refinement | Distinguished procedural and out-of-scope queries; multi-issue classification now requires multiple questions or joined legal issue types. | Phase 9 unit tests and all seven documented CLI scenarios pass on Python 3.13. |
 
 ## Current project artifacts
 
@@ -51,6 +53,10 @@ Next: **Phase 9 — Case/query analysis**
 | `src/rag/prompt.py` | Defines the evidence-only legal-information prompt. | Implemented. |
 | `src/rag/llm.py` | Fixed-model Groq Responses API adapter using the OpenAI client. | Implemented; uses `openai/gpt-oss-120b` by default. |
 | `src/rag/baseline.py` | Conventional Hybrid-RRF baseline answer generation with traceable citations. | Implemented and tested. |
+| `src/analysis/schemas.py` | Versioned query-analysis types and exact-source span validation. | Implemented and verified. |
+| `src/analysis/rules.py` | Auditable deterministic query-shape signals and initial type/complexity classification. | Implemented and verified. |
+| `src/analysis/query_analyzer.py` | Offline-first analysis API and CLI with optional validated LLM assistance. | Implemented and verified. |
+| `tests/test_query_analyzer.py` | Phase 9 category, schema, span, and LLM fallback coverage. | Four tests pass. |
 | `chroma_db/` | Persistent Chroma database for dense legal vectors. | Complete; 35,630 sections indexed. |
 | `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
 | `data/processed/bm25_index.pkl` | Persistent BM25 index and citation metadata. | Generated; 35,630 non-empty sections indexed. |
@@ -118,16 +124,11 @@ These results are from the initial 36-query benchmark. Hybrid RRF is the stronge
 
 ## Deferred work
 
-- Case/query analysis and reasoning-aware modules.
+- Phase 10 reasoning-aware planning and step-level retrieval.
 
 ## Next implementation task
 
-Implement case/query analysis for the reasoning-aware research system, including:
-
-1. Extract stated facts, legal issues, missing facts, and query complexity.
-2. Distinguish direct factual questions from case-based legal scenarios.
-3. Add a structured, testable query-analysis output schema.
-4. Do not change the conventional baseline RAG path while building this next layer.
+Begin Phase 10: design structured reasoning planning and step-level legal retrieval, keeping the conventional baseline path unchanged.
 
 ## Update rule
 
