@@ -7,7 +7,7 @@ Last updated: 2026-09-24
 
 ## Current phase
 
-**Phase 9 — Case/query analysis: complete**
+**Phase 10 — Structured reasoning planning and step-level retrieval: complete**
 
 Phase 8 conventional baseline remains available as the comparison system.
 
@@ -36,6 +36,10 @@ Phase 8 conventional baseline remains available as the comparison system.
 | 2026-09-19 | Baseline RAG provider | Switched the fixed baseline LLM provider to Groq using its OpenAI-compatible Responses API. | Groq key/base-URL configuration tests pass; retrieval code unchanged. |
 | 2026-09-24 | Phase 9 query/case analysis | Added deterministic query kind/complexity signals, versioned structured output, and opt-in Groq span extraction; baseline behavior remains unchanged. | Four Phase 9 unit tests pass; seven representative offline CLI cases inspected. |
 | 2026-09-24 | Phase 9 classification refinement | Distinguished procedural and out-of-scope queries; multi-issue classification now requires multiple questions or joined legal issue types. | Phase 9 unit tests and all seven documented CLI scenarios pass on Python 3.13. |
+| 2026-09-24 | Phase 10 reasoning planner | Added deterministic, versioned reasoning plans for offence, punishment, exception/defence, procedural, provision lookup, and general legal-rule retrieval. | Planner tests pass for legal query shapes, dependencies, and out-of-scope queries. |
+| 2026-09-24 | Phase 10 step-level retrieval | Added independent Hybrid RRF retrieval per plan step with full evidence provenance and a JSON CLI; Phase 8 baseline path unchanged. | Ten Phase 10 tests pass; full CLI retrieved five records per step with `top_k=5`, `candidate_k=20` using the local model cache in offline mode. |
+| 2026-09-24 | Phase 11 evidence sufficiency | Added deterministic per-step `SUPPORTED`, `PARTIALLY_SUPPORTED`, `UNSUPPORTED`, and `UNCERTAIN` assessments, matched/missing requirement types, and auditable reason codes. | 24 combined Phase 9?11 tests pass; malformed, ambiguous, conflicting, empty, partial, and high-score unsupported cases covered. |
+| 2026-09-24 | Versioned Penal Code label correction | Fixed parsing for unnumbered Exception 1 after section 300 and the leading-dot `.301.` label; preserved raw records, positions, and chunk IDs. Rebuilt v2 processed JSON/BM25 artifacts and cloned the dense baseline into a separate v2 database, updating only citation metadata because all three corrected records have unchanged embedding text. | Positions 341?344 map to 300, 300 (Exception 1), 301, 302; v2 indexes contain 35,630 non-empty records. |
 
 ## Current project artifacts
 
@@ -57,6 +61,18 @@ Phase 8 conventional baseline remains available as the comparison system.
 | `src/analysis/rules.py` | Auditable deterministic query-shape signals and initial type/complexity classification. | Implemented and verified. |
 | `src/analysis/query_analyzer.py` | Offline-first analysis API and CLI with optional validated LLM assistance. | Implemented and verified. |
 | `tests/test_query_analyzer.py` | Phase 9 category, schema, span, and LLM fallback coverage. | Four tests pass. |
+| `src/reasoning/schemas.py` | Versioned reasoning plan/step schemas, dependencies, status, and attached provenance-rich evidence. | Implemented and verified. |
+| `src/reasoning/planner.py` | Deterministic plan generation from Phase 9 analysis and explicit issue cues. | Implemented and verified. |
+| `src/reasoning/step_retriever.py` | Separate Hybrid RRF call per step with preserved candidate settings and evidence records. | Implemented and verified. |
+| `src/reasoning/cli.py` | JSON plan/retrieval CLI; supports plan-only inspection. | Implemented and verified. |
+| `src/reasoning/evidence_rules.py` | Deterministic requirement rules by reasoning-step type. | Implemented and verified. |
+| `src/reasoning/sufficiency.py` | Independent evidence-attached step assessments with explicit uncertainty and reason codes. | Implemented and verified; no retrieval or LLM calls. |
+| `data/processed/legal_sections_v2.json` | Corrected section labels with stable source positions and chunk IDs. | Generated; 35,633 valid records. |
+| `data/processed/bm25_index_v2.pkl` | BM25 index built from corrected processed records. | Generated; 35,630 non-empty records indexed. |
+| `chroma_db_v2/` | Versioned dense index cloned from the baseline with corrected citation metadata. | Complete; 35,630 records. Embeddings are unchanged because retrieval text is unchanged. |
+| `tests/test_evidence_sufficiency.py`, `tests/test_preprocess.py` | Phase 11 sufficiency and section-label regression coverage. | Passing. |
+| `tests/test_reasoning_planner.py` | Phase 10 query-shape planning and dependency tests. | Six tests pass. |
+| `tests/test_step_retrieval.py` | Per-step search, candidate-setting, status, and provenance tests. | Four tests pass. |
 | `chroma_db/` | Persistent Chroma database for dense legal vectors. | Complete; 35,630 sections indexed. |
 | `data/model_cache/` | Project-local cache of the BGE embedding model. | Downloaded; ignored by Git. |
 | `data/processed/bm25_index.pkl` | Persistent BM25 index and citation metadata. | Generated; 35,630 non-empty sections indexed. |
@@ -90,7 +106,9 @@ The source act number cannot serve as a unique identifier because it may be reus
 
 - 2026-09-20 diagnostic: for `What punishment applies for murder?`, the exact Hybrid CLI and baseline (`top_k=5`, `candidate_k=20`) both returned chunk suffixes 0351, 0125, 0040, 0342, 0118. A temporary print immediately after baseline retrieval records the ranks and scores. No retrieval logic or indexes were changed.
 - Penal Code section 302 (`act_act-print-11_section_0344`) ranks 7 with the baseline candidate pool: dense rank 2, absent from BM25 top 20, RRF 0.01612903. The earlier reported hybrid rank 3 used `candidate_k=100`, so it did not describe the baseline. The live baseline completed and reported insufficient evidence.
-- The displayed section label 342 on chunk 0342 is a separate preprocessing concern: its text contains homicide exceptions, so the position-derived section label needs review before trusting citations.
+- Provenance review of raw `act-print-11.json`: array item 342 contains an unnumbered “Exception 1” continuance immediately after item 341, whose text begins with section 300. `preprocess.section_identifier()` falls back to the array position when no leading number matches, so it labels that exception “342”; this is a raw-record boundary/numbering gap combined with a position-as-section fallback. Item 343 begins `.301.`, which also fails the current leading-number pattern and is liable to become label “343”. No source data or processed index was changed. Review/repair label mapping before relying on these citations.
+- Phase 10 CLI smoke retrieval for “What punishment applies for murder?” produced independent offence and punishment searches (five evidence records each); the per-step result lists and full provenance remain separate. No answer or evidence-sufficiency decision is produced.
+- Combined Phase 9/10 suite: 14 tests pass (`tests.test_query_analyzer`, `tests.test_reasoning_planner`, `tests.test_step_retrieval`).
 
 - `src` compiles successfully.
 - Preprocessor command executes successfully against the real dataset.
@@ -124,11 +142,12 @@ These results are from the initial 36-query benchmark. Hybrid RRF is the stronge
 
 ## Deferred work
 
-- Phase 10 reasoning-aware planning and step-level retrieval.
+- Phase 11 evidence sufficiency assessment.
+- Correct the source-section label mapping around Penal Code positions 342–343 after reviewing the dataset segmentation, then rebuild affected processed/index artifacts under a versioned data change.
 
 ## Next implementation task
 
-Begin Phase 10: design structured reasoning planning and step-level legal retrieval, keeping the conventional baseline path unchanged.
+Phase 12: define a clarification/next-action policy for unsupported, partially supported, or uncertain steps, separate from the conventional baseline.
 
 ## Update rule
 

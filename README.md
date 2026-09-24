@@ -104,6 +104,50 @@ The output is a versioned JSON `QueryAnalysis` record. Deterministic analysis
 works offline, and invalid LLM output is ignored with a warning. This phase
 does not alter the conventional baseline, preserving it for later ablations.
 
+## Phase 10 reasoning plan and step-level retrieval
+
+Create a deterministic plan, then retrieve Hybrid RRF evidence separately for
+each step. Defaults preserve the baseline retrieval settings (`top_k=5`,
+`candidate_k=20`). The command returns a structured plan with each step's
+retrieval query, dependencies, and full evidence records; it does not generate
+a legal answer or assess evidence sufficiency:
+
+```powershell
+# Optional when the embedding model is already cached and network access is unavailable:
+$env:HF_HUB_OFFLINE = "1"
+$env:TRANSFORMERS_OFFLINE = "1"
+python -m src.reasoning.cli --query "What punishment applies when a person intentionally kills another?"
+python -m unittest tests.test_reasoning_planner tests.test_step_retrieval -v
+```
+
+Use `--plan-only` to inspect the plan without loading the embedding model or
+querying the indexes. The standard command requires the local dense model and
+both the BM25 and Chroma indexes.
+
+## Phase 11 evidence sufficiency
+
+Assess each Phase 10 step independently against only its attached retrieved
+records. Deterministic rules report `SUPPORTED`, `PARTIALLY_SUPPORTED`,
+`UNSUPPORTED`, or `UNCERTAIN`, with matched/missing requirement types and
+reason codes. Retrieval scores do not establish legal support. Assessment does
+not generate a legal answer or retrieve additional evidence:
+
+```python
+from src.reasoning.sufficiency import assess_plan
+
+assessments = assess_plan(retrieved_plan)
+```
+
+The corrected Penal Code labels are built into separate versioned artifacts:
+`legal_sections_v2.json`, `bm25_index_v2.pkl`, and `chroma_db_v2/`. To run
+Phase 10 against these indexes without replacing the original baseline:
+
+```powershell
+python -m src.reasoning.cli --query "What punishment applies for murder?" --bm25-index data/processed/bm25_index_v2.pkl --dense-database chroma_db_v2
+```
+
+The raw acts and original processed/index artifacts remain unchanged.
+
 ## Cross-encoder reranking
 
 Rerank the hybrid top-20 candidates with `cross-encoder/ms-marco-MiniLM-L-6-v2` (downloaded to the project-local model cache on first use):

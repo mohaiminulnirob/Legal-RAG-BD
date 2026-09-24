@@ -54,15 +54,35 @@ def section_records(act: dict[str, Any]) -> Iterable[dict[str, Any]]:
     return (section for section in sections if isinstance(section, dict))
 
 
-def section_identifier(section: dict[str, Any], fallback: int) -> str:
-    """Use a supplied section number, or extract a leading number from its text."""
+def explicit_section_identifier(section: dict[str, Any]) -> str | None:
+    """Return an explicit section number when the source record provides one."""
     explicit_id = first_value(section, "section_id", "id", "section_no", "number")
     if explicit_id is not None:
         return str(explicit_id)
 
     content = str(first_value(section, "section_content", "content", "text", default=""))
-    match = re.match(r"^\s*(?:\d+\[)?(?P<number>\d+[A-Za-z]?)\s*[.:-]", content)
-    return match.group("number") if match else str(fallback)
+    match = re.match(r"^\s*\.?\s*(?:\d+\[)?(?P<number>\d+[A-Za-z]?)\s*[.:-]", content)
+    return match.group("number") if match else None
+
+
+def section_identifier(
+    section: dict[str, Any],
+    fallback: int,
+    *,
+    parent_section: str | None = None,
+) -> str:
+    """Use an explicit label, associate exception continuations with their parent,
+    or retain the old ordinal fallback for unlabeled non-continuation records.
+    """
+    explicit_id = explicit_section_identifier(section)
+    if explicit_id is not None:
+        return explicit_id
+
+    content = str(first_value(section, "section_content", "content", "text", default=""))
+    exception = re.match(r"^\s*Exception\s+(?P<number>\d+)\b", content, re.I)
+    if exception and parent_section:
+        return f"{parent_section} (Exception {exception.group('number')})"
+    return str(fallback)
 
 
 def normalize(acts: list[dict[str, Any]], source_name: str) -> list[dict[str, Any]]:
@@ -74,8 +94,12 @@ def normalize(acts: list[dict[str, Any]], source_name: str) -> list[dict[str, An
         act_id = str(first_value(act, "act_id", "id", "source_file", default=act_index))
         act_id = Path(act_id).stem
         csv_metadata = act.get("csv_metadata") if isinstance(act.get("csv_metadata"), dict) else {}
+        parent_section: str | None = None
         for section_index, section in enumerate(section_records(act), start=1):
-            section_id = section_identifier(section, section_index)
+            explicit_section = explicit_section_identifier(section)
+            section_id = section_identifier(section, section_index, parent_section=parent_section)
+            if explicit_section is not None:
+                parent_section = explicit_section
             content = first_value(section, "section_content", "content", "text", "description", default="")
             documents.append(
                 {

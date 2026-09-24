@@ -15,6 +15,7 @@ data/benchmark/*.local.json
 data/benchmark/results/*.local.json
 chroma_db/*
 !chroma_db/.gitkeep
+chroma_db_v2/
 dense_build*.log
 retrieval_evaluation*.log
 reranker_evaluation*.log
