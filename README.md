@@ -148,6 +148,40 @@ python -m src.reasoning.cli --query "What punishment applies for murder?" --bm25
 
 The raw acts and original processed/index artifacts remain unchanged.
 
+## Phase 12 deterministic next-action policy
+
+Choose one bounded action from a Phase 11 assessment and explicit execution
+state. The policy is a pure function: it does not retrieve, ask the user, or
+call an LLM. Missing statute evidence can trigger a bounded retrieval retry;
+clarification is selected only when the caller explicitly supplies missing
+user facts. Uncertain evidence is acknowledged unless a clarifiable user fact
+is supplied. Retry counters in `NextActionState` count attempts already used;
+the returned decision reports the attempt number for a newly selected action.
+
+```python
+from src.reasoning.next_action import NextActionState, decide_next_action
+from src.reasoning.sufficiency import assess_step
+
+assessment = assess_step(reasoning_step)
+decision = decide_next_action(
+    assessment,
+    NextActionState(
+        max_retrieval_attempts=2,
+        missing_user_facts=("whether the act was intentional",),
+    ),
+)
+print(decision.to_dict())
+```
+
+Possible actions are `CONTINUE`, `RETRIEVE_MORE`, `CLARIFY`,
+`ACKNOWLEDGE_UNCERTAINTY`, and `STOP`. This policy selects whether to clarify;
+it does not phrase a question or run the adaptive retrieval/answer loop.
+Run its tests with:
+
+```powershell
+python -m unittest tests.test_next_action -v
+```
+
 ## Cross-encoder reranking
 
 Rerank the hybrid top-20 candidates with `cross-encoder/ms-marco-MiniLM-L-6-v2` (downloaded to the project-local model cache on first use):

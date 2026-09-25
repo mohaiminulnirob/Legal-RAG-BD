@@ -3,11 +3,11 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 ## Current phase
 
-**Phase 10 — Structured reasoning planning and step-level retrieval: complete**
+**Phase 12 - Deterministic clarification and next-action policy: complete**
 
 Phase 8 conventional baseline remains available as the comparison system.
 
@@ -39,7 +39,8 @@ Phase 8 conventional baseline remains available as the comparison system.
 | 2026-09-24 | Phase 10 reasoning planner | Added deterministic, versioned reasoning plans for offence, punishment, exception/defence, procedural, provision lookup, and general legal-rule retrieval. | Planner tests pass for legal query shapes, dependencies, and out-of-scope queries. |
 | 2026-09-24 | Phase 10 step-level retrieval | Added independent Hybrid RRF retrieval per plan step with full evidence provenance and a JSON CLI; Phase 8 baseline path unchanged. | Ten Phase 10 tests pass; full CLI retrieved five records per step with `top_k=5`, `candidate_k=20` using the local model cache in offline mode. |
 | 2026-09-24 | Phase 11 evidence sufficiency | Added deterministic per-step `SUPPORTED`, `PARTIALLY_SUPPORTED`, `UNSUPPORTED`, and `UNCERTAIN` assessments, matched/missing requirement types, and auditable reason codes. | 24 combined Phase 9?11 tests pass; malformed, ambiguous, conflicting, empty, partial, and high-score unsupported cases covered. |
-| 2026-09-24 | Versioned Penal Code label correction | Fixed parsing for unnumbered Exception 1 after section 300 and the leading-dot `.301.` label; preserved raw records, positions, and chunk IDs. Rebuilt v2 processed JSON/BM25 artifacts and cloned the dense baseline into a separate v2 database, updating only citation metadata because all three corrected records have unchanged embedding text. | Positions 341?344 map to 300, 300 (Exception 1), 301, 302; v2 indexes contain 35,630 non-empty records. |
+| 2026-09-24 | Versioned Penal Code label correction | Fixed parsing for unnumbered Exception 1 after section 300 and the leading-dot `.301.` label; preserved raw records, positions, and chunk IDs. Rebuilt v2 processed JSON/BM25 artifacts and cloned the dense baseline into a separate v2 database, updating only citation metadata because all three corrected records have unchanged embedding text. | Positions 341-344 map to 300, 300 (Exception 1), 301, 302; v2 indexes contain 35,630 non-empty records. |
+| 2026-09-25 | Phase 12 next-action policy | Added a pure deterministic policy mapping per-step Phase 11 assessments and bounded execution state to continue, retrieve more, clarify, acknowledge uncertainty, or stop. Clarification requires explicitly identified missing user facts. | Ten policy tests and 35 combined Phase 9-12 tests pass. |
 
 ## Current project artifacts
 
@@ -67,6 +68,8 @@ Phase 8 conventional baseline remains available as the comparison system.
 | `src/reasoning/cli.py` | JSON plan/retrieval CLI; supports plan-only inspection. | Implemented and verified. |
 | `src/reasoning/evidence_rules.py` | Deterministic requirement rules by reasoning-step type. | Implemented and verified. |
 | `src/reasoning/sufficiency.py` | Independent evidence-attached step assessments with explicit uncertainty and reason codes. | Implemented and verified; no retrieval or LLM calls. |
+| `src/reasoning/next_action.py` | Versioned deterministic next-action decision and validated retry/clarification state. | Implemented and verified; pure policy with no retrieval or LLM calls. |
+| `tests/test_next_action.py` | Supported, partial, unsupported, uncertain, budget, clarification, stop, validation, and serialization policy coverage. | Ten tests pass. |
 | `data/processed/legal_sections_v2.json` | Corrected section labels with stable source positions and chunk IDs. | Generated; 35,633 valid records. |
 | `data/processed/bm25_index_v2.pkl` | BM25 index built from corrected processed records. | Generated; 35,630 non-empty records indexed. |
 | `chroma_db_v2/` | Versioned dense index cloned from the baseline with corrected citation metadata. | Complete; 35,630 records. Embeddings are unchanged because retrieval text is unchanged. |
@@ -142,12 +145,11 @@ These results are from the initial 36-query benchmark. Hybrid RRF is the stronge
 
 ## Deferred work
 
-- Phase 11 evidence sufficiency assessment.
-- Correct the source-section label mapping around Penal Code positions 342–343 after reviewing the dataset segmentation, then rebuild affected processed/index artifacts under a versioned data change.
+- None for Phases 9-12. Adaptive execution, clarification wording, and final answer integration are planned for later phases.
 
 ## Next implementation task
 
-Phase 12: define a clarification/next-action policy for unsupported, partially supported, or uncertain steps, separate from the conventional baseline.
+Phase 13: define uncertainty acknowledgement and response wording using Phase 12 decisions, without adding a full retrieve/clarify/answer loop yet.
 
 ## Update rule
 
