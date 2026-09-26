@@ -182,6 +182,51 @@ Run its tests with:
 python -m unittest tests.test_next_action -v
 ```
 
+## Phase 13 clarification and uncertainty handling
+
+Execute the `CLARIFY` decision with a bounded, deterministic question request;
+execute `ACKNOWLEDGE_UNCERTAINTY` with a structured record of relevant quoted
+passages, missing evidence requirements, unresolved user facts, and what cannot
+be concluded. Neither component decides which action to take, retrieves more
+evidence, nor calls an LLM. `ExecutionState` keeps the plan, active step,
+attempt counts, user facts, assessments, and selected actions together for a
+later orchestrator.
+
+```python
+from src.reasoning.clarification import build_clarification_requests
+from src.reasoning.execution_state import ExecutionState
+from src.reasoning.next_action import NextAction, decide_next_action
+from src.reasoning.uncertainty import build_uncertainty_acknowledgement
+
+state = ExecutionState.start(plan).with_pending_user_facts(
+    ("whether the act was intentional",)
+)
+# Here, `plan`, `current_step`, and `assessment` are existing Phase 10/11 records.
+decision = decide_next_action(assessment, state.next_action_state())
+state = state.record_assessment(assessment).record_action(decision)
+if decision.action == NextAction.CLARIFY:
+    requests = build_clarification_requests(decision)
+    state = state.record_clarification_requests(requests)
+elif decision.action == NextAction.ACKNOWLEDGE_UNCERTAINTY:
+    from src.reasoning.uncertainty import build_uncertainty_acknowledgement
+
+    acknowledgement = build_uncertainty_acknowledgement(
+        decision, assessment, current_step,
+        unresolved_user_facts=state.next_action_state().missing_user_facts,
+    )
+    print(acknowledgement.render())
+```
+
+The current Phase 11 assessor identifies missing legal evidence categories; it
+does not infer concrete facts about the user's situation. Therefore, an
+upstream caller must explicitly supply any missing-user-fact targets used by
+Phase 12 and Phase 13. This phase provides state and action handlers, not the
+interactive loop or answer generation. Verify with:
+
+```powershell
+python -m unittest tests.test_clarification tests.test_uncertainty tests.test_execution_state -v
+```
+
 ## Cross-encoder reranking
 
 Rerank the hybrid top-20 candidates with `cross-encoder/ms-marco-MiniLM-L-6-v2` (downloaded to the project-local model cache on first use):

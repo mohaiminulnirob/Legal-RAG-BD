@@ -3,11 +3,11 @@
 This is the living implementation record for the Bangladesh Legal RAG project.
 Update it whenever code, dependencies, data artifacts, tests, or project structure change.
 
-Last updated: 2026-09-25
+Last updated: 2026-09-26
 
 ## Current phase
 
-**Phase 12 - Deterministic clarification and next-action policy: complete**
+**Phase 13 - Clarification and uncertainty handling: complete**
 
 Phase 8 conventional baseline remains available as the comparison system.
 
@@ -41,6 +41,7 @@ Phase 8 conventional baseline remains available as the comparison system.
 | 2026-09-24 | Phase 11 evidence sufficiency | Added deterministic per-step `SUPPORTED`, `PARTIALLY_SUPPORTED`, `UNSUPPORTED`, and `UNCERTAIN` assessments, matched/missing requirement types, and auditable reason codes. | 24 combined Phase 9?11 tests pass; malformed, ambiguous, conflicting, empty, partial, and high-score unsupported cases covered. |
 | 2026-09-24 | Versioned Penal Code label correction | Fixed parsing for unnumbered Exception 1 after section 300 and the leading-dot `.301.` label; preserved raw records, positions, and chunk IDs. Rebuilt v2 processed JSON/BM25 artifacts and cloned the dense baseline into a separate v2 database, updating only citation metadata because all three corrected records have unchanged embedding text. | Positions 341-344 map to 300, 300 (Exception 1), 301, 302; v2 indexes contain 35,630 non-empty records. |
 | 2026-09-25 | Phase 12 next-action policy | Added a pure deterministic policy mapping per-step Phase 11 assessments and bounded execution state to continue, retrieve more, clarify, acknowledge uncertainty, or stop. Clarification requires explicitly identified missing user facts. | Ten policy tests and 35 combined Phase 9-12 tests pass. |
+| 2026-09-26 | Phase 13 clarification and uncertainty handling | Added deterministic clarification question construction, bounded evidence-based uncertainty acknowledgements, and immutable versioned execution state. Phase 12 remains the sole action selector; no end-to-end loop or LLM phrasing was added. | 16 Phase 13 tests and 51 combined Phase 9-13 tests pass. |
 
 ## Current project artifacts
 
@@ -69,6 +70,10 @@ Phase 8 conventional baseline remains available as the comparison system.
 | `src/reasoning/evidence_rules.py` | Deterministic requirement rules by reasoning-step type. | Implemented and verified. |
 | `src/reasoning/sufficiency.py` | Independent evidence-attached step assessments with explicit uncertainty and reason codes. | Implemented and verified; no retrieval or LLM calls. |
 | `src/reasoning/next_action.py` | Versioned deterministic next-action decision and validated retry/clarification state. | Implemented and verified; pure policy with no retrieval or LLM calls. |
+| `src/reasoning/clarification.py` | Bounded neutral clarification requests from explicit Phase 12 targets. | Implemented and verified; does not infer missing facts or call an LLM. |
+| `src/reasoning/uncertainty.py` | Bounded structured uncertainty response with relevant quoted passages and missing information. | Implemented and verified; does not make a legal conclusion. |
+| `src/reasoning/execution_state.py` | Versioned state for query, plan, active step, bounded attempts, user facts, assessments, and action history. | Implemented and verified; immutable updates and JSON serialization. |
+| `tests/test_clarification.py`, `tests/test_uncertainty.py`, `tests/test_execution_state.py` | Phase 13 request, uncertainty, bounded-state, and serialization coverage. | 16 tests pass. |
 | `tests/test_next_action.py` | Supported, partial, unsupported, uncertain, budget, clarification, stop, validation, and serialization policy coverage. | Ten tests pass. |
 | `data/processed/legal_sections_v2.json` | Corrected section labels with stable source positions and chunk IDs. | Generated; 35,633 valid records. |
 | `data/processed/bm25_index_v2.pkl` | BM25 index built from corrected processed records. | Generated; 35,630 non-empty records indexed. |
@@ -145,11 +150,11 @@ These results are from the initial 36-query benchmark. Hybrid RRF is the stronge
 
 ## Deferred work
 
-- None for Phases 9-12. Adaptive execution, clarification wording, and final answer integration are planned for later phases.
+- The complete adaptive retrieval/clarification loop and answer generation remain for Phase 14.
 
 ## Next implementation task
 
-Phase 13: define uncertainty acknowledgement and response wording using Phase 12 decisions, without adding a full retrieve/clarify/answer loop yet.
+Phase 14: integrate planning, retrieval, sufficiency, next-action selection, clarification, and uncertainty handling into the end-to-end reasoning loop.
 
 ## Update rule
 
