@@ -6,7 +6,7 @@ from src.reasoning.next_action import (
     NextActionState,
     decide_next_action,
 )
-from src.reasoning.sufficiency import EvidenceAssessment, SufficiencyStatus
+from src.reasoning.sufficiency import EvidenceAssessment, ReasonCode as SufficiencyReasonCode, SufficiencyStatus
 
 
 def assessment(status: SufficiencyStatus, missing=()) -> EvidenceAssessment:
@@ -48,6 +48,20 @@ class NextActionTests(unittest.TestCase):
     def test_uncertain_is_acknowledged_without_retry(self):
         result = decide_next_action(assessment(SufficiencyStatus.UNCERTAIN))
         self.assertEqual(result.action, NextAction.ACKNOWLEDGE_UNCERTAINTY)
+
+    def test_empty_retrieval_is_retryable_within_budget(self):
+        empty = EvidenceAssessment(
+            step_id="step-1",
+            status=SufficiencyStatus.UNCERTAIN,
+            evidence_count=0,
+            relevant_evidence_ids=(),
+            missing_requirements=("offence_definition",),
+            support_signals=(),
+            reason_codes=(SufficiencyReasonCode.NO_EVIDENCE,),
+            requires_clarification=True,
+        )
+        result = decide_next_action(empty)
+        self.assertEqual(result.action, NextAction.RETRIEVE_MORE)
 
     def test_uncertain_with_explicit_critical_fact_missing_clarifies(self):
         state = NextActionState(missing_user_facts=("whether the person acted intentionally",))

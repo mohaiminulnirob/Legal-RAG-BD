@@ -7,7 +7,7 @@ Last updated: 2026-09-26
 
 ## Current phase
 
-**Phase 13 - Clarification and uncertainty handling: complete**
+**Phase 14 - End-to-end adaptive reasoning orchestration: complete**
 
 Phase 8 conventional baseline remains available as the comparison system.
 
@@ -40,8 +40,9 @@ Phase 8 conventional baseline remains available as the comparison system.
 | 2026-09-24 | Phase 10 step-level retrieval | Added independent Hybrid RRF retrieval per plan step with full evidence provenance and a JSON CLI; Phase 8 baseline path unchanged. | Ten Phase 10 tests pass; full CLI retrieved five records per step with `top_k=5`, `candidate_k=20` using the local model cache in offline mode. |
 | 2026-09-24 | Phase 11 evidence sufficiency | Added deterministic per-step `SUPPORTED`, `PARTIALLY_SUPPORTED`, `UNSUPPORTED`, and `UNCERTAIN` assessments, matched/missing requirement types, and auditable reason codes. | 24 combined Phase 9?11 tests pass; malformed, ambiguous, conflicting, empty, partial, and high-score unsupported cases covered. |
 | 2026-09-24 | Versioned Penal Code label correction | Fixed parsing for unnumbered Exception 1 after section 300 and the leading-dot `.301.` label; preserved raw records, positions, and chunk IDs. Rebuilt v2 processed JSON/BM25 artifacts and cloned the dense baseline into a separate v2 database, updating only citation metadata because all three corrected records have unchanged embedding text. | Positions 341-344 map to 300, 300 (Exception 1), 301, 302; v2 indexes contain 35,630 non-empty records. |
-| 2026-09-25 | Phase 12 next-action policy | Added a pure deterministic policy mapping per-step Phase 11 assessments and bounded execution state to continue, retrieve more, clarify, acknowledge uncertainty, or stop. Clarification requires explicitly identified missing user facts. | Ten policy tests and 35 combined Phase 9-12 tests pass. |
-| 2026-09-26 | Phase 13 clarification and uncertainty handling | Added deterministic clarification question construction, bounded evidence-based uncertainty acknowledgements, and immutable versioned execution state. Phase 12 remains the sole action selector; no end-to-end loop or LLM phrasing was added. | 16 Phase 13 tests and 51 combined Phase 9-13 tests pass. |
+| 2026-09-25 | Phase 12 next-action policy | Added a pure deterministic policy mapping per-step Phase 11 assessments and bounded execution state to continue, retrieve more, clarify, acknowledge uncertainty, or stop. Clarification requires explicitly identified missing user facts. | 12 policy tests pass; the Phase 9-12 targeted suite passes. |
+| 2026-09-26 | Phase 13 clarification and uncertainty handling | Added deterministic clarification question construction, bounded evidence-based uncertainty acknowledgements, and immutable versioned execution state. Phase 12 remains the sole action selector; no end-to-end loop or LLM phrasing was added. | 16 Phase 13 tests and 52 combined Phase 9-13 tests pass. |
+| 2026-09-26 | Phase 14 adaptive reasoning orchestration | Connected analysis, planning, per-step retrieval, sufficiency, next-action policy, clarification, uncertainty, bounded retries, dependency order, resumable state, and terminal-only optional answer generation. | Nine orchestrator integration tests and 61 combined Phase 9-14 tests pass. |
 
 ## Current project artifacts
 
@@ -73,6 +74,8 @@ Phase 8 conventional baseline remains available as the comparison system.
 | `src/reasoning/clarification.py` | Bounded neutral clarification requests from explicit Phase 12 targets. | Implemented and verified; does not infer missing facts or call an LLM. |
 | `src/reasoning/uncertainty.py` | Bounded structured uncertainty response with relevant quoted passages and missing information. | Implemented and verified; does not make a legal conclusion. |
 | `src/reasoning/execution_state.py` | Versioned state for query, plan, active step, bounded attempts, user facts, assessments, and action history. | Implemented and verified; immutable updates and JSON serialization. |
+| `src/reasoning/orchestrator.py` | Bounded end-to-end reasoning loop with clarification pause/resume, uncertainty terminal handling, and optional final LLM generation. | Implemented and verified with injectable retrieval/LLM interfaces. |
+| `tests/test_orchestrator.py` | Multi-step, retrieval budget, clarification/resume, uncertainty, and terminal-generation orchestration coverage. | Eight tests pass. |
 | `tests/test_clarification.py`, `tests/test_uncertainty.py`, `tests/test_execution_state.py` | Phase 13 request, uncertainty, bounded-state, and serialization coverage. | 16 tests pass. |
 | `tests/test_next_action.py` | Supported, partial, unsupported, uncertain, budget, clarification, stop, validation, and serialization policy coverage. | Ten tests pass. |
 | `data/processed/legal_sections_v2.json` | Corrected section labels with stable source positions and chunk IDs. | Generated; 35,633 valid records. |
@@ -150,11 +153,11 @@ These results are from the initial 36-query benchmark. Hybrid RRF is the stronge
 
 ## Deferred work
 
-- The complete adaptive retrieval/clarification loop and answer generation remain for Phase 14.
+- Benchmark construction and comparative evaluation remain for Phases 15-17.
 
 ## Next implementation task
 
-Phase 14: integrate planning, retrieval, sufficiency, next-action selection, clarification, and uncertainty handling into the end-to-end reasoning loop.
+Phase 15: construct a benchmark for adaptive reasoning decisions, clarification quality, uncertainty handling, and end-to-end outcomes.
 
 ## Update rule
 

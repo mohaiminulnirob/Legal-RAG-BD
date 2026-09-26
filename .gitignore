@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.tmp_test/
 
 # Environment and local data
 .env

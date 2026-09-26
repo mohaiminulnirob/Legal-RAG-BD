@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from typing import Any
 
-from src.reasoning.sufficiency import EvidenceAssessment, SufficiencyStatus
+from src.reasoning.sufficiency import EvidenceAssessment, ReasonCode as SufficiencyReasonCode, SufficiencyStatus
 
 
 class NextAction(StrEnum):
@@ -106,6 +106,12 @@ def decide_next_action(
             targets = state.missing_user_facts
         elif state.missing_user_facts and state.clarification_attempts >= state.max_clarification_attempts:
             action, reason = NextAction.ACKNOWLEDGE_UNCERTAINTY, ActionReason.CLARIFICATION_LIMIT_REACHED
+        elif (
+            SufficiencyReasonCode.NO_EVIDENCE in assessment.reason_codes
+            and state.retrieval_attempts < state.max_retrieval_attempts
+        ):
+            action, reason = NextAction.RETRIEVE_MORE, ActionReason.RETRIEVAL_RETRY_AVAILABLE
+            retrieval_attempt += 1
         else:
             action, reason = NextAction.ACKNOWLEDGE_UNCERTAINTY, ActionReason.EVIDENCE_INSUFFICIENT
     elif state.missing_user_facts:

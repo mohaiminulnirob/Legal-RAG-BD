@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Sequence
 
 from src.reasoning.next_action import NextAction, NextActionDecision
 from src.reasoning.schemas import ReasoningStep
@@ -23,6 +23,7 @@ class SupportedEvidenceExcerpt:
     act_title: str
     section_id: str
     excerpt: str
+    reasoning_objective: str = ""
     source_url: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -31,6 +32,7 @@ class SupportedEvidenceExcerpt:
             "act_title": self.act_title,
             "section_id": self.section_id,
             "excerpt": self.excerpt,
+            "reasoning_objective": self.reasoning_objective,
             "source_url": self.source_url,
         }
 
@@ -63,7 +65,8 @@ class UncertaintyAcknowledgement:
             entries = []
             for item in self.supported_evidence:
                 cite = f"{item.act_title}, section {item.section_id}"
-                entries.append(f"{cite}: {item.excerpt}")
+                objective = f" (step: {item.reasoning_objective})" if item.reasoning_objective else ""
+                entries.append(f"{cite}{objective}: {item.excerpt}")
             parts.append("Available evidence: " + " ".join(entries))
         else:
             parts.append("Available evidence: no verified supporting passage is attached to this step.")
@@ -81,6 +84,7 @@ def build_uncertainty_acknowledgement(
     step: ReasoningStep,
     *,
     unresolved_user_facts: tuple[str, ...] = (),
+    prior_supported_steps: Sequence[tuple[ReasoningStep, EvidenceAssessment]] = (),
     max_evidence_records: int = 3,
     max_excerpt_chars: int = 360,
 ) -> UncertaintyAcknowledgement:
@@ -97,34 +101,42 @@ def build_uncertainty_acknowledgement(
         raise ValueError("Evidence and excerpt bounds are invalid.")
     if any(not isinstance(fact, str) or not fact.strip() for fact in unresolved_user_facts):
         raise ValueError("Unresolved user facts must be non-empty strings.")
+    for prior_step, prior_assessment in prior_supported_steps:
+        if prior_step.step_id != prior_assessment.step_id or prior_assessment.status.value != "supported":
+            raise ValueError("Prior uncertainty context may include only matching supported steps.")
 
-    relevant_ids = set(assessment.relevant_evidence_ids)
     records: list[SupportedEvidenceExcerpt] = []
     seen: set[str] = set()
-    for raw in step.evidence if max_evidence_records else ():
-        if not isinstance(raw, dict):
-            continue
-        chunk_id = raw.get("chunk_id")
-        content = raw.get("section_content")
-        if not isinstance(chunk_id, str) or chunk_id not in relevant_ids or chunk_id in seen or not isinstance(content, str):
-            continue
-        act_title = raw.get("act_title")
-        section_id = raw.get("section_id")
-        if not act_title or section_id in (None, ""):
-            continue
-        excerpt = " ".join(content.split())
-        if len(excerpt) > max_excerpt_chars:
-            excerpt = excerpt[: max_excerpt_chars - 1].rstrip() + "…"
-        records.append(
-            SupportedEvidenceExcerpt(
-                chunk_id=chunk_id,
-                act_title=_bounded_text(act_title, 160),
-                section_id=_bounded_text(section_id, 80),
-                excerpt=excerpt,
-                source_url=_bounded_text(raw["source_url"], 500) if raw.get("source_url") else None,
+    evidence_sources = [*prior_supported_steps, (step, assessment)]
+    for evidence_step, evidence_assessment in evidence_sources:
+        relevant_ids = set(evidence_assessment.relevant_evidence_ids)
+        for raw in evidence_step.evidence if max_evidence_records else ():
+            if not isinstance(raw, dict):
+                continue
+            chunk_id = raw.get("chunk_id")
+            content = raw.get("section_content")
+            if not isinstance(chunk_id, str) or chunk_id not in relevant_ids or chunk_id in seen or not isinstance(content, str):
+                continue
+            act_title = raw.get("act_title")
+            section_id = raw.get("section_id")
+            if not act_title or section_id in (None, ""):
+                continue
+            excerpt = " ".join(content.split())
+            if len(excerpt) > max_excerpt_chars:
+                excerpt = excerpt[: max_excerpt_chars - 1].rstrip() + "…"
+            records.append(
+                SupportedEvidenceExcerpt(
+                    chunk_id=chunk_id,
+                    act_title=_bounded_text(act_title, 160),
+                    section_id=_bounded_text(section_id, 80),
+                    excerpt=excerpt,
+                    reasoning_objective=_bounded_text(evidence_step.objective, 240),
+                    source_url=_bounded_text(raw["source_url"], 500) if raw.get("source_url") else None,
+                )
             )
-        )
-        seen.add(chunk_id)
+            seen.add(chunk_id)
+            if len(records) >= max_evidence_records:
+                break
         if len(records) >= max_evidence_records:
             break
 

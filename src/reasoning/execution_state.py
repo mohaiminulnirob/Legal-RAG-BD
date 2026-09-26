@@ -1,4 +1,4 @@
-"""Immutable bounded execution state for future reasoning orchestration."""
+"""Immutable bounded execution state for adaptive reasoning orchestration."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from typing import Any
 
 from src.reasoning.clarification import ClarificationRequest
 from src.reasoning.next_action import NextAction, NextActionDecision, NextActionState
-from src.reasoning.schemas import ReasoningPlan
+from src.reasoning.schemas import ReasoningPlan, ReasoningStep
 from src.reasoning.sufficiency import EvidenceAssessment
 
 MAX_RETRIEVAL_ATTEMPTS = 10
@@ -43,8 +43,8 @@ class ExecutionState:
     schema_version: str = "1.0"
 
     def __post_init__(self) -> None:
-        if not self.query.strip() or self.query != self.plan.query:
-            raise ValueError("Execution state query must match the non-empty original plan query.")
+        if not self.query.strip():
+            raise ValueError("Execution state must retain the non-empty original query.")
         step_ids = {step.step_id for step in self.plan.steps}
         if self.current_step_id is not None and self.current_step_id not in step_ids:
             raise ValueError("current_step_id must identify a step in the plan or be None.")
@@ -85,12 +85,13 @@ class ExecutionState:
         cls,
         plan: ReasoningPlan,
         *,
+        query: str | None = None,
         max_retrieval_attempts: int = 2,
         max_clarification_attempts: int = 1,
     ) -> "ExecutionState":
         current = plan.steps[0].step_id if plan.steps else None
         return cls(
-            query=plan.query,
+            query=query if query is not None else plan.query,
             plan=plan,
             current_step_id=current,
             max_retrieval_attempts=max_retrieval_attempts,
@@ -114,16 +115,36 @@ class ExecutionState:
             stop_requested=self.stopped,
         )
 
-    def with_pending_user_facts(self, facts: tuple[str, ...]) -> "ExecutionState":
-        if self.current_step_id is None:
-            raise ValueError("No current step is available.")
+    def retrieval_attempts_for(self, step_id: str) -> int:
+        return dict(self.retrieval_attempts).get(step_id, 0)
+
+    def clarification_attempts_for(self, step_id: str) -> int:
+        return dict(self.clarification_attempts).get(step_id, 0)
+
+    def with_pending_user_facts(
+        self,
+        facts: tuple[str, ...],
+        *,
+        step_id: str | None = None,
+    ) -> "ExecutionState":
+        target_step_id = step_id or self.current_step_id
+        if target_step_id is None or target_step_id not in {step.step_id for step in self.plan.steps}:
+            raise ValueError("Pending facts must target a step in the plan.")
         if any(not isinstance(fact, str) or not fact.strip() for fact in facts):
             raise ValueError("Pending facts must be non-empty strings.")
         if len(facts) > MAX_PENDING_FACTS or any(len(fact) > 240 for fact in facts):
             raise ValueError("Pending facts are limited to 10 targets of at most 240 characters each.")
         pending = dict(self.pending_user_facts)
-        pending[self.current_step_id] = tuple(dict.fromkeys(fact.strip() for fact in facts))
+        pending[target_step_id] = tuple(dict.fromkeys(fact.strip() for fact in facts))
         return replace(self, pending_user_facts=tuple((key, value) for key, value in pending.items()))
+
+    def update_current_step(self, updated_step: ReasoningStep) -> "ExecutionState":
+        self._require_current_step(updated_step.step_id)
+        updated_plan = replace(
+            self.plan,
+            steps=tuple(updated_step if step.step_id == updated_step.step_id else step for step in self.plan.steps),
+        )
+        return replace(self, plan=updated_plan)
 
     def record_assessment(self, assessment: EvidenceAssessment) -> "ExecutionState":
         self._require_current_step(assessment.step_id)
@@ -131,6 +152,10 @@ class ExecutionState:
 
     def record_action(self, decision: NextActionDecision) -> "ExecutionState":
         self._require_current_step(decision.step_id)
+        if not self.assessments or self.assessments[-1].step_id != decision.step_id:
+            raise ValueError("An action requires a recorded assessment for the current step.")
+        if self.assessments[-1].status != decision.sufficiency:
+            raise ValueError("Action sufficiency must match the current assessment.")
         updated = replace(self, selected_actions=(*self.selected_actions, decision))
         if decision.action == NextAction.STOP:
             updated = replace(updated, stopped=True)
@@ -189,6 +214,10 @@ class ExecutionState:
             raise ValueError("User fact and value must be non-empty.")
         if len(fact) > 240 or len(value) > 2_000:
             raise ValueError("User facts are limited to 240 characters and values to 2,000 characters.")
+        if fact.strip().casefold() not in {
+            pending.casefold() for pending in dict(self.pending_user_facts).get(self.current_step_id, ())
+        }:
+            raise ValueError("The user fact must match an explicitly pending clarification target.")
         recorded = UserFact(self.current_step_id, fact.strip(), value.strip())
         pending = dict(self.pending_user_facts)
         remaining = tuple(item for item in pending.get(self.current_step_id, ()) if item.casefold() != fact.strip().casefold())

@@ -189,8 +189,8 @@ execute `ACKNOWLEDGE_UNCERTAINTY` with a structured record of relevant quoted
 passages, missing evidence requirements, unresolved user facts, and what cannot
 be concluded. Neither component decides which action to take, retrieves more
 evidence, nor calls an LLM. `ExecutionState` keeps the plan, active step,
-attempt counts, user facts, assessments, and selected actions together for a
-later orchestrator.
+attempt counts, user facts, assessments, and selected actions together for the
+Phase 14 orchestrator.
 
 ```python
 from src.reasoning.clarification import build_clarification_requests
@@ -208,8 +208,6 @@ if decision.action == NextAction.CLARIFY:
     requests = build_clarification_requests(decision)
     state = state.record_clarification_requests(requests)
 elif decision.action == NextAction.ACKNOWLEDGE_UNCERTAINTY:
-    from src.reasoning.uncertainty import build_uncertainty_acknowledgement
-
     acknowledgement = build_uncertainty_acknowledgement(
         decision, assessment, current_step,
         unresolved_user_facts=state.next_action_state().missing_user_facts,
@@ -220,11 +218,39 @@ elif decision.action == NextAction.ACKNOWLEDGE_UNCERTAINTY:
 The current Phase 11 assessor identifies missing legal evidence categories; it
 does not infer concrete facts about the user's situation. Therefore, an
 upstream caller must explicitly supply any missing-user-fact targets used by
-Phase 12 and Phase 13. This phase provides state and action handlers, not the
-interactive loop or answer generation. Verify with:
+Phase 12 and Phase 13. Verify with:
 
 ```powershell
 python -m unittest tests.test_clarification tests.test_uncertainty tests.test_execution_state -v
+```
+
+## Phase 14 end-to-end adaptive reasoning
+
+Run the deterministic analysis, planner, step retrieval, sufficiency, action,
+clarification, uncertainty, and state loop:
+
+```powershell
+python -m src.reasoning.orchestrator --query "What offence and punishment apply for murder?"
+```
+
+When a concrete missing user fact has been identified, pass it by plan step ID
+to enable interactive clarification. The orchestrator returns a structured
+request if no interactive handler is configured. API callers can resume from
+the returned `ExecutionState` and submit the user's answer:
+
+```powershell
+python -m src.reasoning.orchestrator --query "What offence applies?" --missing-user-fact "step_1=whether the act was intentional" --interactive-clarification
+```
+
+Retrieval and clarification limits are bounded and configurable with
+`--max-retrieval-attempts` and `--max-clarification-attempts`. The system does
+not advance to later steps after unresolved uncertainty. Add
+`--generate-answer` to call the configured Groq model after a completed or
+uncertainty-acknowledged state; this requires `GROQ_API_KEY`. Without it, the
+CLI returns structured results and deterministic uncertainty wording.
+
+```powershell
+python -m unittest tests.test_orchestrator -v
 ```
 
 ## Cross-encoder reranking
